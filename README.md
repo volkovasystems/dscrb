@@ -1,0 +1,2 @@
+# dscrb
+Get property descriptor.
