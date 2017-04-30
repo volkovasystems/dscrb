@@ -44,6 +44,9 @@
               
               	@submodule-documentation:
               		Descriptor class wrapper.
+              
+              		This class was designed with strict adherence to the descriptor specification.
+              		Certain methods may throw error if misused properly.
               	@end-submodule-documentation
               
               	@include:
@@ -127,12 +130,9 @@ Descriptor = function () {
 
 		{
 			if (this[TYPE] === ACCESSOR_DESCRIPTOR) {
-				this.get = this[DESCRIPTOR].get;
-				this.set = this[DESCRIPTOR].set;
-
 				return {
-					"get": this.get,
-					"set": this.set,
+					"get": this[DESCRIPTOR].get,
+					"set": this[DESCRIPTOR].set,
 
 					"configurable": this[DESCRIPTOR].configurable,
 					"enumerable": this[DESCRIPTOR].enumerable };
@@ -150,13 +150,37 @@ Descriptor = function () {
 			}
 
 			return {};
+		} }, { key: "get", value: function get()
+
+		{
+			if (this[TYPE] === DATA_DESCRIPTOR) {
+				throw new Error("cannot access get on data descriptor");
+			}
+
+			return this[DESCRIPTOR].get.apply(this[ENTITY], raze(arguments));
+		} }, { key: "set", value: function set()
+
+		{
+			if (this[TYPE] === DATA_DESCRIPTOR) {
+				throw new Error("cannot access set on data descriptor");
+			}
+
+			return this[DESCRIPTOR].set.apply(this[ENTITY], raze(arguments));
 		} }, { key: "value", value: function value()
 
 		{
+			if (this[TYPE] === ACCESSOR_DESCRIPTOR) {
+				throw new Error("cannot access value on accessor descriptor");
+			}
+
 			return this[DESCRIPTOR].value;
 		} }, { key: "writable", value: function writable()
 
 		{
+			if (this[TYPE] === ACCESSOR_DESCRIPTOR) {
+				throw new Error("cannot access writable on accessor descriptor");
+			}
+
 			return this[DESCRIPTOR].writable;
 		} }, { key: "configurable", value: function configurable()
 

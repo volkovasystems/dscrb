@@ -1,6 +1,6 @@
 {
   "name": "dscrb",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Get property descriptor.",
   "main": "dscrb.js",
   "support": "dscrb.support.js",
