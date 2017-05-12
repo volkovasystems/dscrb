@@ -6,6 +6,7 @@ falzy \
 harden \
 kein \
 protype \
+wichevr \
 zelf \
 --save && \
 yarn add \
@@ -23,6 +24,7 @@ falzy \
 harden \
 kein \
 protype \
+wichevr \
 zelf \
 --save \
 --force-latest

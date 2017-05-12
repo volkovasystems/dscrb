@@ -1,6 +1,6 @@
 {
   "name": "dscrb",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Get property descriptor.",
   "main": "dscrb.js",
   "support": "dscrb.support.js",
@@ -39,6 +39,7 @@
     "harden": "^0.21.0",
     "kein": "^0.25.0",
     "protype": "^0.21.0",
+    "wichevr": "^0.9.0",
     "zelf": "^0.11.0"
   },
   "devDependencies": {

@@ -56,7 +56,8 @@
               			"falzy": "falzy",
               			"harden": "harden",
               			"kein": "kein",
-              			"protype": "protype"
+              			"protype": "protype",
+              			"wichevr": "wichevr"
               		}
               	@end-include
               */var _stringify = require("babel-runtime/core-js/json/stringify");var _stringify2 = _interopRequireDefault(_stringify);var _getOwnPropertyDescriptor = require("babel-runtime/core-js/object/get-own-property-descriptor");var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);var _createClass2 = require("babel-runtime/helpers/createClass");var _createClass3 = _interopRequireDefault(_createClass2);var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
@@ -67,6 +68,7 @@ var falzy = require("falzy");
 var harden = require("harden");
 var kein = require("kein");
 var protype = require("protype");
+var wichevr = require("wichevr");
 
 var PROPERTY = (0, _symbol2.default)("property");
 var ENTITY = (0, _symbol2.default)("entity");
@@ -111,7 +113,14 @@ Descriptor = function () {
 	}(0, _createClass3.default)(Descriptor, [{ key: "describe", value: function describe()
 
 		{
-			this[DESCRIPTOR] = (0, _getOwnPropertyDescriptor2.default)(this[ENTITY], this[PROPERTY]);
+			this[DESCRIPTOR] = wichevr((0, _getOwnPropertyDescriptor2.default)(this[ENTITY], this[PROPERTY]),
+			{
+				"value": this[ENTITY][this[PROPERTY]],
+				"writable": true,
+
+				"configurable": true,
+				"enumerable": protype(this[PROPERTY], SYMBOL) ? false : true });
+
 
 			return this;
 		} }, { key: "determine", value: function determine()
@@ -129,27 +138,22 @@ Descriptor = function () {
 		} }, { key: "resolve", value: function resolve()
 
 		{
+			var descriptor = {
+				"configurable": this[DESCRIPTOR].configurable,
+				"enumerable": this[DESCRIPTOR].enumerable };
+
+
 			if (this[TYPE] === ACCESSOR_DESCRIPTOR) {
-				return {
-					"get": this[DESCRIPTOR].get,
-					"set": this[DESCRIPTOR].set,
-
-					"configurable": this[DESCRIPTOR].configurable,
-					"enumerable": this[DESCRIPTOR].enumerable };
-
+				descriptor.get = this[DESCRIPTOR].get;
+				descriptor.set = this[DESCRIPTOR].set;
 			}
 
 			if (this[TYPE] === DATA_DESCRIPTOR) {
-				return {
-					"value": this[DESCRIPTOR].value,
-					"writable": this[DESCRIPTOR].writable,
-
-					"configurable": this[DESCRIPTOR].configurable,
-					"enumerable": this[DESCRIPTOR].enumerable };
-
+				descriptor.value = this[DESCRIPTOR].value;
+				descriptor.writable = this[DESCRIPTOR].writable;
 			}
 
-			return {};
+			return descriptor;
 		} }, { key: "get", value: function get()
 
 		{

@@ -56,7 +56,8 @@
 			"falzy": "falzy",
 			"harden": "harden",
 			"kein": "kein",
-			"protype": "protype"
+			"protype": "protype",
+			"wichevr": "wichevr"
 		}
 	@end-include
 */
@@ -67,6 +68,7 @@ const falzy = require( "falzy" );
 const harden = require( "harden" );
 const kein = require( "kein" );
 const protype = require( "protype" );
+const wichevr = require( "wichevr" );
 
 const PROPERTY = Symbol( "property" );
 const ENTITY = Symbol( "entity" );
@@ -111,7 +113,14 @@ class Descriptor {
 	}
 
 	describe( ){
-		this[ DESCRIPTOR ] = Object.getOwnPropertyDescriptor( this[ ENTITY ], this[ PROPERTY ] );
+		this[ DESCRIPTOR ] = wichevr( Object.getOwnPropertyDescriptor( this[ ENTITY ], this[ PROPERTY ] ),
+			{
+				"value": this[ ENTITY ][ this[ PROPERTY ] ],
+				"writable": true,
+
+				"configurable": true,
+				"enumerable": ( protype( this[ PROPERTY ], SYMBOL )? false : true )
+			} );
 
 		return this;
 	}
@@ -129,27 +138,22 @@ class Descriptor {
 	}
 
 	resolve( ){
-		if( this[ TYPE ] === ACCESSOR_DESCRIPTOR ){
-			return {
-				"get": this[ DESCRIPTOR ].get,
-				"set": this[ DESCRIPTOR ].set,
+		let descriptor = {
+			"configurable": this[ DESCRIPTOR ].configurable,
+			"enumerable": this[ DESCRIPTOR ].enumerable
+		};
 
-				"configurable": this[ DESCRIPTOR ].configurable,
-				"enumerable": this[ DESCRIPTOR ].enumerable
-			};
+		if( this[ TYPE ] === ACCESSOR_DESCRIPTOR ){
+			descriptor.get = this[ DESCRIPTOR ].get;
+			descriptor.set = this[ DESCRIPTOR ].set;
 		}
 
 		if( this[ TYPE ] === DATA_DESCRIPTOR ){
-			return {
-				"value": this[ DESCRIPTOR ].value,
-				"writable": this[ DESCRIPTOR ].writable,
-
-				"configurable": this[ DESCRIPTOR ].configurable,
-				"enumerable": this[ DESCRIPTOR ].enumerable
-			};
+			descriptor.value = this[ DESCRIPTOR ].value;
+			descriptor.writable = this[ DESCRIPTOR ].writable;
 		}
 
-		return { };
+		return descriptor;
 	}
 
 	get( ){
