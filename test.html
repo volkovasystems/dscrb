@@ -22,7 +22,14 @@
 				let descriptor = dscrb( "property", test );
 
 				assert.equal( descriptor.as( DATA_DESCRIPTOR ), true, "should be true" );
-				assert.deepEqual( descriptor.toJSON( ), { "value": "value", "enumerable": true, "configurable": true, "writable": true }, "should be deeply equal" );
+
+				assert.deepEqual( descriptor.toJSON( ),
+					{
+						"value": "value",
+						"enumerable": true,
+						"configurable": true,
+						"writable": true
+					}, "should be deeply equal" );
 
 			} );
 		</script>
