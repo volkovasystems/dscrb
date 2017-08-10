@@ -58,10 +58,9 @@
 			"allkey": "allkey",
 			"anykey": "anykey",
 			"falzy": "falzy",
-			"harden": "harden",
 			"kein": "kein",
 			"protype": "protype",
-			"wichevr": "wichevr"
+			"raze": "raze"
 		}
 	@end-include
 */
@@ -69,10 +68,9 @@
 const allkey = require( "allkey" );
 const anykey = require( "anykey" );
 const falzy = require( "falzy" );
-const harden = require( "harden" );
 const kein = require( "kein" );
 const protype = require( "protype" );
-const wichevr = require( "wichevr" );
+const raze = require( "raze" );
 
 const PROPERTY = Symbol( "property" );
 const ENTITY = Symbol( "entity" );
@@ -202,8 +200,8 @@ class Descriptor {
 		};
 
 		if( this.isAccessorDescriptor( ) ){
-			descriptor.get = this[ DESCRIPTOR ].get;
-			descriptor.set = this[ DESCRIPTOR ].set;
+			descriptor.get = this[ DESCRIPTOR ].get || this.get;
+			descriptor.set = this[ DESCRIPTOR ].set || this.set;
 		}
 
 		if( this.isDataDescriptor( ) ){
@@ -223,7 +221,7 @@ class Descriptor {
 	}
 
 	applyDescriptor( ){
-		Object.defineProperty( this[ ENTITY ], this[ PROPERTY ], this[ DESCRIPTOR ] );
+		Object.defineProperty( this[ ENTITY ], this[ PROPERTY ], this.resolveDescriptor( ) );
 
 		return this;
 	}

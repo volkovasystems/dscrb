@@ -28,8 +28,8 @@
 	@module-configuration:
 		{
 			"package": "dscrb",
-			"path": "dscrb/dscrb.js",
-			"file": "dscrb.js",
+			"path": "dscrb/dscrb.module.js",
+			"file": "dscrb.module.js",
 			"module": "dscrb",
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
@@ -38,7 +38,6 @@
 				"Vinse Vinalon <vinsevinalon@gmail.com>"
 			],
 			"repository": "https://github.com/volkovasystems/dscrb.git",
-			"test": "dscrb-test.js",
 			"global": true
 		}
 	@end-module-configuration
@@ -67,7 +66,13 @@ const kein = require( "kein" );
 const protype = require( "protype" );
 const zelf = require( "zelf" );
 
+//: @server:
 const Descriptor = require( "./descriptor.js" );
+//: @end-server
+
+//: @client:
+const Descriptor = require( "./descriptor.support.js" );
+//: @end-client
 
 const dscrb = function dscrb( property, entity ){
 	/*;
@@ -95,7 +100,7 @@ const dscrb = function dscrb( property, entity ){
 		throw new Error( "property does not exists" );
 	}
 
-	return new Descriptor( property, entity );
+	return Object.freeze( new Descriptor( property, entity ) );
 };
 
 module.exports = dscrb;
