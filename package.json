@@ -1,54 +1,57 @@
 {
-  "name": "dscrb",
-  "version": "0.6.0",
-  "description": "Get property descriptor.",
-  "main": "dscrb.js",
-  "support": "dscrb.support.js",
-  "deploy": "dscrb.deploy.js",
-  "build": "dscrb.deploy.js",
-  "scripts": {
-    "build:descriptor": "babel descriptor.module.js --out-file descriptor.js --source-maps",
-    "build:dscrb": "babel dscrb.js --out-file dscrb.support.js --source-maps",
-    "build": "npm run build:descriptor && npm run build:dscrb && webpack --progress --display-modules",
-    "test": "mocha dscrb-test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/volkovasystems/dscrb.git"
-  },
-  "keywords": [
-    "get",
-    "property",
-    "descriptor",
-    "dscrb"
-  ],
-  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-  "contributors": [
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon <vinsevinalon@gmail.com>"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/volkovasystems/dscrb/issues"
-  },
-  "homepage": "https://github.com/volkovasystems/dscrb#readme",
-  "dependencies": {
-    "allkey": "^0.4.0",
-    "anykey": "^0.4.0",
-    "babel-runtime": "^6.23.0",
-    "falzy": "^0.20.0",
-    "harden": "^0.22.0",
-    "kein": "^0.28.0",
-    "protype": "^0.22.0",
-    "wichevr": "^0.13.0",
-    "zelf": "^0.12.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.1",
-    "source-map-loader": "^0.2.1",
-    "webpack": "^3.2.0"
-  }
+	"name": "dscrb",
+	"version": "0.7.0",
+	"description": "Get property descriptor.",
+	"main": "dscrb.js",
+	"support": "dscrb.support.js",
+	"deploy": "dscrb.deploy.js",
+	"build": "dscrb.deploy.js",
+	"scripts": {
+		"pristine": "rsetmod clean && flxc execute ./.install.sh",
+		"clear": "rsetmod clean --clear",
+		"build:descriptor": "babel descriptor.module.js --out-file descriptor.js --source-maps",
+		"build:dscrb": "babel dscrb.js --out-file dscrb.support.js --source-maps",
+		"build": "npm run build:descriptor && npm run build:dscrb && webpack --progress --display-modules",
+		"pretest": "npm run clear && npm run build",
+		"test": "node dscrb-test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/volkovasystems/dscrb.git"
+	},
+	"keywords": [
+		"get",
+		"property",
+		"descriptor",
+		"dscrb"
+	],
+	"author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+	"contributors": [
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/volkovasystems/dscrb/issues"
+	},
+	"homepage": "https://github.com/volkovasystems/dscrb#readme",
+	"dependencies": {
+		"allkey": "^0.5.0",
+		"anykey": "^0.5.0",
+		"babel-runtime": "^6.25.0",
+		"falzy": "^0.23.0",
+		"harden": "^0.23.0",
+		"kein": "^0.30.0",
+		"protype": "^0.24.0",
+		"wichevr": "^0.14.0",
+		"zelf": "^0.14.0"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.24.1",
+		"babel-core": "^6.25.0",
+		"babel-plugin-transform-runtime": "^6.23.0",
+		"babel-preset-latest": "^6.24.1",
+		"source-map-loader": "^0.2.1",
+		"webpack": "^3.5.2"
+	}
 }
