@@ -21,8 +21,6 @@
 				let test = { "property": "value" };
 				let descriptor = dscrb( "property", test );
 
-				assert.equal( descriptor instanceof Descriptor, true, "should be equal to true" );
-
 				assert.equal( descriptor.as( DATA_DESCRIPTOR ), true, "should be equal to true" );
 
 				assert.deepEqual( descriptor.toJSON( ),
