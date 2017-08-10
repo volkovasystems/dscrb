@@ -1,38 +1,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>dscrb unit test</title>
+		<meta charset="utf-8">
 
-		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+		<title>test:dscrb</title>
 
-		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-
-		<script type="application/javascript" src="./dscrb.deploy.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css"/>
 	</head>
 
 	<body>
-		<div id="qunit"></div>
+		<div id="mocha"></div>
 
-		<div id="qunit-fixture"></div>
+		<script type="application/javascript" src="https://unpkg.com/mocha/mocha.js"></script>
 
 		<script type="application/javascript">
-			QUnit.test( "dscrb unit test", function( assert ) {
-
-				let test = { "property": "value" };
-				let descriptor = dscrb( "property", test );
-
-				assert.equal( descriptor.as( DATA_DESCRIPTOR ), true, "should be equal to true" );
-
-				assert.deepEqual( descriptor.toJSON( ),
-					{
-						"value": "value",
-						"enumerable": true,
-						"configurable": true,
-						"writable": true
-					},
-					"should be equal to { 'value': 'value', 'enumerable': true, 'configurable': true, 'writable': true }" );
-
+			mocha.setup( {
+				"ui": "bdd",
+				"slow": 0
 			} );
+		</script>
+
+		<script type="application/javascript" src="./test.deploy.js"></script>
+
+		<script type="application/javascript">
+			mocha.run( );
 		</script>
 	</body>
 </html>

@@ -57,9 +57,9 @@
 		{
 			"allkey": "allkey",
 			"anykey": "anykey",
+			"detr": "detr",
 			"falzy": "falzy",
 			"kein": "kein",
-			"protype": "protype",
 			"raze": "raze"
 		}
 	@end-include
@@ -67,18 +67,18 @@
 
 const allkey = require( "allkey" );
 const anykey = require( "anykey" );
+const detr = require( "detr" );
 const falzy = require( "falzy" );
 const kein = require( "kein" );
-const protype = require( "protype" );
 const raze = require( "raze" );
 
-const PROPERTY = Symbol( "property" );
-const ENTITY = Symbol( "entity" );
 const DESCRIPTOR = Symbol( "descriptor" );
+const ENTITY = Symbol( "entity" );
+const PROPERTY = Symbol( "property" );
 const TYPE = Symbol( "type" );
 
-const DATA_DESCRIPTOR = "data-descriptor";
 const ACCESSOR_DESCRIPTOR = "accessor-descriptor";
+const DATA_DESCRIPTOR = "data-descriptor";
 
 class Descriptor {
 	constructor( property, entity ){
@@ -95,7 +95,10 @@ class Descriptor {
 			@end-meta-configuration
 		*/
 
-		if( falzy( property ) || !protype( property, NUMBER + STRING + SYMBOL ) ){
+		if(
+			falzy( property )
+			|| ( typeof property != "number" && typeof property != "string" && typeof property != "symbol" )
+		){
 			throw new Error( "invalid property" );
 		}
 
@@ -119,12 +122,25 @@ class Descriptor {
 		let value = this[ ENTITY ][ this[ PROPERTY ] ];
 		let enumerable = typeof this[ PROPERTY ] != "symbol";
 
-		this.setDescriptor( detr( this.extractDescriptor( ), {
-			"value": value,
-			"writable": true,
+		this.setDescriptor( detr( this.extractDescriptor( ), function defer( descriptor ){
+			if( anykey( [ "get", "set" ], descriptor ) ){
+				return {
+					"get": descriptor.get,
+					"set": descriptor.set,
 
-			"configurable": true,
-			"enumerable": enumerable
+					"configurable": true,
+					"enumerable": enumerable
+				};
+
+			}else{
+				return {
+					"value": descriptor.value,
+					"writable": true,
+
+					"configurable": true,
+					"enumerable": enumerable
+				};
+			}
 		} ) );
 
 		return this;
@@ -163,7 +179,7 @@ class Descriptor {
 
 	value( ){
 		if( this.isAccessorDescriptor( ) ){
-			throw new Error( "cannot access value on accessor descriptor" );
+			return this.get( );
 		}
 
 		return this[ DESCRIPTOR ].value;
@@ -171,7 +187,7 @@ class Descriptor {
 
 	writable( ){
 		if( this.isAccessorDescriptor( ) ){
-			throw new Error( "cannot access writable on accessor descriptor" );
+			return false;
 		}
 
 		return this[ DESCRIPTOR ].writable;
@@ -200,8 +216,15 @@ class Descriptor {
 		};
 
 		if( this.isAccessorDescriptor( ) ){
-			descriptor.get = this[ DESCRIPTOR ].get || this.get;
-			descriptor.set = this[ DESCRIPTOR ].set || this.set;
+			descriptor.get = this[ DESCRIPTOR ].get || ( function get( ){
+				return this.value;
+			} ).bind( this[ DESCRIPTOR ] );
+
+			descriptor.set = this[ DESCRIPTOR ].set || ( function set( value ){
+				this.value = value;
+
+				return this;
+			} ).bind( this[ DESCRIPTOR ] );
 		}
 
 		if( this.isDataDescriptor( ) ){
@@ -209,21 +232,43 @@ class Descriptor {
 			descriptor.writable = this[ DESCRIPTOR ].writable;
 		}
 
-		return descriptor;
+		return Object.freeze( descriptor );
 	}
 
 	extractDescriptor( ){
-		return Object.getOwnPropertyDescriptor( this[ ENTITY ], this[ PROPERTY ] );
-	}
+		try{
+			return Object.getOwnPropertyDescriptor( this[ ENTITY ], this[ PROPERTY ] );
 
-	getDescriptor( ){
-		return this[ DESCRIPTOR ];
+		}catch( error ){
+			return { };
+		}
 	}
 
 	applyDescriptor( ){
-		Object.defineProperty( this[ ENTITY ], this[ PROPERTY ], this.resolveDescriptor( ) );
+		/*;
+			@note:
+				There's no sense to apply descriptor to falsy, non-object or non-function entity.
+			@end-note
+		*/
+		if(
+			typeof this[ ENTITY ] != "object"
+			&& typeof this[ ENTITY ] != "function"
+		){
+			return this;
+		}
+
+		try{
+			Object.defineProperty( this[ ENTITY ], this[ PROPERTY ], this.resolveDescriptor( ) );
+
+		}catch( error ){
+			throw new Error( `cannot apply descriptor, ${ error.stack }` );
+		}
 
 		return this;
+	}
+
+	getDescriptor( ){
+		return this.resolveDescriptor( );
 	}
 
 	setDescriptor( descriptor ){

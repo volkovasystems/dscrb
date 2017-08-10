@@ -1,5 +1,7 @@
+"use strict";
+
 /*;
-	@module-license:
+	@test-license:
 		The MIT License (MIT)
 		@mit-license
 
@@ -23,74 +25,77 @@
 		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 		SOFTWARE.
-	@end-module-license
+	@end-test-license
 
-	@module-configuration:
+	@test-configuration:
 		{
 			"package": "dscrb",
-			"path": "dscrb/dscrb.module.js",
-			"file": "dscrb.module.js",
-			"module": "dscrb",
+			"path": "dscrb/test.module.js",
+			"file": "test.module.js",
+			"module": "test",
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
 			"contributors": [
 				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
 				"Vinse Vinalon <vinsevinalon@gmail.com>"
 			],
-			"repository": "https://github.com/volkovasystems/dscrb.git",
-			"global": true
+			"repository": "https://github.com/volkovasystems/dscrb.git"
 		}
-	@end-module-configuration
+	@end-test-configuration
 
-	@module-documentation:
-		Get property descriptor.
+	@test-documentation:
 
-		Note that you should only use this if the property exists on the entity.
-		This will throw an error if property does not exists.
-
-		This will always return an instance of the Descriptor class.
-	@end-module-documentation
+	@end-test-documentation
 
 	@include:
 		{
-			"harden": "harden",
-			"zelf": "zelf"
+			"assert": "should",
+			"dscrb": "dscrb",
+			"path": "path"
 		}
 	@end-include
 */
 
-const harden = require( "harden" );
-const zelf = require( "zelf" );
+const assert = require( "should" );
 
 //: @server:
-const Descriptor = require( "./descriptor.js" );
+const dscrb = require( "./dscrb.js" );
 //: @end-server
 
-//: @client:
-const Descriptor = require( "./descriptor.support.js" );
-//: @end-client
 
-const dscrb = function dscrb( property, entity ){
-	/*;
-		@meta-configuration:
-			{
-				"property:required": [
-					"number"
-					"string",
-					"symbol"
-				],
-				"entity": "*"
-			}
-		@end-meta-configuration
-	*/
 
-	if( arguments.length == 1 ){
-		entity = zelf( this );
-	}
 
-	return Object.freeze( new Descriptor( property, entity ) );
-};
 
-harden( "Descriptor", Descriptor, dscrb );
+//: @server:
+describe( "dscrb", ( ) => {
 
-module.exports = dscrb;
+	describe( "`dscrb( 'property', { 'property': 'value' } )`", ( ) => {
+		it( "should return an instance of Descriptor", ( ) => {
+			let descriptor = dscrb( "property", { "property": "value" } );
+
+			assert.equal( descriptor instanceof dscrb.Descriptor, true );
+		} );
+	} );
+
+	describe( "`dscrb( 'property', { 'property': 'value' } ).resolveDescriptor( )`", ( ) => {
+		it( "should return a descriptor object with complete data descriptor properties", ( ) => {
+			let descriptor = dscrb( "property", { "property": "value" } ).resolveDescriptor( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "writable" in descriptor, true );
+
+			assert.equal( "configurable" in descriptor, true );
+
+			assert.equal( "enumerable" in descriptor, true );
+		} );
+	} );
+
+} );
+//: @end-server
+
+
+
+

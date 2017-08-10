@@ -2,11 +2,11 @@ yarn add \
 babel-runtime \
 allkey \
 anykey \
+detr \
 falzy \
 harden \
 kein \
-protype \
-wichevr \
+raze \
 zelf \
 --save && \
 yarn add \
@@ -36,11 +36,11 @@ yargs \
 bower install \
 allkey \
 anykey \
+detr \
 falzy \
 harden \
 kein \
-protype \
-wichevr \
+raze \
 zelf \
 --save \
 --force-latest

@@ -66,9 +66,7 @@ const zelf = require( "zelf" );
 const Descriptor = require( "./descriptor.js" );
 //: @end-server
 
-//: @client:
-const Descriptor = require( "./descriptor.support.js" );
-//: @end-client
+
 
 const dscrb = function dscrb( property, entity ){
 	/*;
