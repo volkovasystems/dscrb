@@ -1,53 +1,58 @@
 {
-  "name": "dscrb",
-  "version": "0.4.0",
-  "description": "Get property descriptor.",
-  "main": "dscrb.js",
-  "support": "dscrb.support.js",
-  "deploy": "dscrb.deploy.js",
-  "build": "dscrb.deploy.js",
-  "scripts": {
-    "build:descriptor": "babel descriptor.module.js --out-file descriptor.js --source-maps",
-    "build:dscrb": "babel dscrb.js --out-file dscrb.support.js --source-maps",
-    "build": "npm run build:descriptor && npm run build:dscrb && webpack --progress --display-modules",
-    "test": "mocha dscrb-test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/volkovasystems/dscrb.git"
-  },
-  "keywords": [
-    "get",
-    "property",
-    "descriptor",
-    "dscrb"
-  ],
-  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-  "contributors": [
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/volkovasystems/dscrb/issues"
-  },
-  "homepage": "https://github.com/volkovasystems/dscrb#readme",
-  "dependencies": {
-    "allkey": "^0.2.0",
-    "anykey": "^0.2.0",
-    "babel-runtime": "^6.23.0",
-    "falzy": "^0.19.0",
-    "harden": "^0.21.0",
-    "kein": "^0.25.0",
-    "protype": "^0.21.0",
-    "wichevr": "^0.9.0",
-    "zelf": "^0.11.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.1",
-    "source-map-loader": "^0.2.1",
-    "webpack": "^2.5.1"
-  }
+	"name": "dscrb",
+	"version": "0.4.0",
+	"description": "Get property descriptor.",
+	"main": "dscrb.js",
+	"support": "dscrb.support.js",
+	"deploy": "dscrb.deploy.js",
+	"build": "dscrb.deploy.js",
+	"scripts": {
+		"pristine": "rsetmod clean && flxc execute ./.install.sh",
+		"clear": "rsetmod clean --clear",
+		"formal": "jesy apply '*.json'",
+		"build:support": "gulp --module dscrb,descriptor --all",
+		"build:deploy": "webpack --config webpack.compact.js --progress --display-modules",
+		"rebuild": "npm run build:support && npm run build:deploy",
+		"build": "npm run pristine && npm run rebuild",
+		"build:test:support": "gulp --module test --all",
+		"build:test:deploy": "webpack --config webpack.test.js --progress --display-modules",
+		"build:test:bridge": "gulp --module test --bridge",
+		"build:test": "npm run build:test:support && npm run build:test:deploy && npm run build:test:bridge",
+		"test:server": "mocha test.js && mocha test.js --reporter=json > test.server.json",
+		"test:client": "./node_modules/.bin/wdio wdio.client.js",
+		"pretest": "npm run clear && npm run rebuild && npm run build:test",
+		"test": "npm run test:server && npm run test:client",
+		"posttest": "npm run formal",
+		"deploy": "npm run build && npm run build:test && npm run test:server && npm run test:client && npm run formal"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/volkovasystems/dscrb.git"
+	},
+	"keywords": [
+		"get",
+		"property",
+		"descriptor",
+		"dscrb"
+	],
+	"author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+	"contributors": [
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/volkovasystems/dscrb/issues"
+	},
+	"homepage": "https://github.com/volkovasystems/dscrb#readme",
+	"dependencies": {
+		"allkey": "^0.5.0",
+		"anykey": "^0.5.0",
+		"babel-runtime": "^6.25.0",
+		"falzy": "^0.23.0",
+		"harden": "^0.23.0",
+		"kein": "^0.30.0",
+		"protype": "^0.24.0",
+		"wichevr": "^0.14.0",
+		"zelf": "^0.14.0"
+	}
 }
