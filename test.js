@@ -62,13 +62,9 @@ const assert = require( "should" );
 const dscrb = require( "./dscrb.js" );
 //: @end-server
 
-//: @client:
-const dscrb = require( "./dscrb.support.js" );
-//: @end-client
 
-//: @bridge:
-const path = require( "path" );
-//: @end-bridge
+
+
 
 //: @server:
 describe( "dscrb", ( ) => {
@@ -100,81 +96,6 @@ describe( "dscrb", ( ) => {
 } );
 //: @end-server
 
-//: @client:
-describe( "dscrb", ( ) => {
 
-	describe( "`dscrb( 'property', { 'property': 'value' } )`", ( ) => {
-		it( "should return an instance of Descriptor", ( ) => {
-			let descriptor = dscrb( "property", { "property": "value" } );
 
-			assert.equal( descriptor instanceof dscrb.Descriptor, true );
-		} );
-	} );
 
-	describe( "`dscrb( 'property', { 'property': 'value' } ).resolveDescriptor( )`", ( ) => {
-		it( "should return a descriptor object with complete data descriptor properties", ( ) => {
-			let descriptor = dscrb( "property", { "property": "value" } ).resolveDescriptor( );
-
-			assert.equal( typeof descriptor, "object" );
-
-			assert.equal( "value" in descriptor, true );
-
-			assert.equal( "writable" in descriptor, true );
-
-			assert.equal( "configurable" in descriptor, true );
-
-			assert.equal( "enumerable" in descriptor, true );
-		} );
-	} );
-
-} );
-//: @end-client
-
-//: @bridge:
-describe( "dscrb", ( ) => {
-
-	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
-
-	describe( "`dscrb( 'property', { 'property': 'value' } )`", ( ) => {
-		it( "should return an instance of Descriptor", ( ) => {
-
-			let result = browser.url( bridgeURL ).execute(
-
-				function( ){
-					return dscrb( "property", { "property": "value" } ) instanceof dscrb.Descriptor;
-				}
-
-			).value;
-
-			assert.equal( result, true );
-		} );
-	} );
-
-	describe( "`dscrb( 'property', { 'property': 'value' } ).resolveDescriptor( )`", ( ) => {
-		it( "should return a descriptor object with complete data descriptor properties", ( ) => {
-			//: @ignore:
-			let result = browser.url( bridgeURL ).execute(
-
-				function( ){
-					return JSON.stringify( dscrb( "property", { "property": "value" } ).resolveDescriptor( ) );
-				}
-
-			).value;
-			//: @end-ignore
-
-			let descriptor = JSON.parse( result );
-
-			assert.equal( typeof descriptor, "object" );
-
-			assert.equal( "value" in descriptor, true );
-
-			assert.equal( "writable" in descriptor, true );
-
-			assert.equal( "configurable" in descriptor, true );
-
-			assert.equal( "enumerable" in descriptor, true );
-		} );
-	} );
-
-} );
-//: @end-bridge

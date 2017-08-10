@@ -1,5 +1,3 @@
-"use strict";
-
 /*;
 	@module-license:
 		The MIT License (MIT)
@@ -30,16 +28,16 @@
 	@module-configuration:
 		{
 			"package": "dscrb",
-			"path": "dscrb/dscrb.js",
-			"file": "dscrb.js",
+			"path": "dscrb/dscrb.module.js",
+			"file": "dscrb.module.js",
 			"module": "dscrb",
 			"author": "Richeve S. Bebedor",
-			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-			],
 			"eMail": "richeve.bebedor@gmail.com",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+				"Vinse Vinalon <vinsevinalon@gmail.com>"
+			],
 			"repository": "https://github.com/volkovasystems/dscrb.git",
-			"test": "dscrb-test.js",
 			"global": true
 		}
 	@end-module-configuration
@@ -55,20 +53,20 @@
 
 	@include:
 		{
-			"falzy": "falzy",
-			"kein": "kein",
-			"protype": "protype",
+			"harden": "harden",
 			"zelf": "zelf"
 		}
 	@end-include
 */
 
-const falzy = require( "falzy" );
-const kein = require( "kein" );
-const protype = require( "protype" );
+const harden = require( "harden" );
 const zelf = require( "zelf" );
 
+//: @server:
 const Descriptor = require( "./descriptor.js" );
+//: @end-server
+
+
 
 const dscrb = function dscrb( property, entity ){
 	/*;
@@ -84,19 +82,13 @@ const dscrb = function dscrb( property, entity ){
 		@end-meta-configuration
 	*/
 
-	if( falzy( property ) || !protype( property, NUMBER + STRING + SYMBOL ) ){
-		throw new Error( "invalid property" );
-	}
-
 	if( arguments.length == 1 ){
 		entity = zelf( this );
 	}
 
-	if( !kein( property, entity ) ){
-		throw new Error( "property does not exists" );
-	}
-
-	return new Descriptor( property, entity );
+	return Object.freeze( new Descriptor( property, entity ) );
 };
+
+harden( "Descriptor", Descriptor, dscrb );
 
 module.exports = dscrb;

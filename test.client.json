@@ -1,0 +1,117 @@
+{
+	"state": {
+		"passed": 2,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-08-10T12:14:50.194Z",
+	"end": "2017-08-10T12:15:15.657Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": null
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd",
+		"slow": 0
+	},
+	"suites": [
+		{
+			"name": "dscrb",
+			"duration": 0,
+			"start": "2017-08-10T12:15:15.296Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "dscrb",
+			"duration": 176,
+			"start": "2017-08-10T12:15:15.297Z",
+			"end": "2017-08-10T12:15:15.473Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-08-10T12:15:15.298Z",
+					"end": "2017-08-10T12:15:15.299Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return an instance of Descriptor"
+				},
+				{
+					"start": "2017-08-10T12:15:15.413Z",
+					"end": "2017-08-10T12:15:15.414Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return an instance of Descriptor"
+				},
+				{
+					"start": "2017-08-10T12:15:15.415Z",
+					"end": "2017-08-10T12:15:15.415Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return a descriptor object with complete data descriptor properties"
+				},
+				{
+					"start": "2017-08-10T12:15:15.473Z",
+					"end": "2017-08-10T12:15:15.473Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return a descriptor object with complete data descriptor properties"
+				},
+				{
+					"start": "2017-08-10T12:15:15.473Z",
+					"end": "2017-08-10T12:15:15.474Z",
+					"duration": 1,
+					"title": "\"after all\" hook",
+					"associatedSuite": "dscrb"
+				}
+			]
+		},
+		{
+			"name": "`dscrb( 'property', { 'property': 'value' } )`",
+			"duration": 117,
+			"start": "2017-08-10T12:15:15.297Z",
+			"end": "2017-08-10T12:15:15.414Z",
+			"tests": [
+				{
+					"name": "should return an instance of Descriptor",
+					"start": "2017-08-10T12:15:15.298Z",
+					"end": "2017-08-10T12:15:15.413Z",
+					"duration": 115,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`dscrb( 'property', { 'property': 'value' } ).resolveDescriptor( )`",
+			"duration": 59,
+			"start": "2017-08-10T12:15:15.414Z",
+			"end": "2017-08-10T12:15:15.473Z",
+			"tests": [
+				{
+					"name": "should return a descriptor object with complete data descriptor properties",
+					"start": "2017-08-10T12:15:15.415Z",
+					"end": "2017-08-10T12:15:15.473Z",
+					"duration": 58,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}

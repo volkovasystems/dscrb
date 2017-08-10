@@ -1,12 +1,13 @@
 {
 	"name": "dscrb",
-	"version": "0.4.0",
+	"version": "0.7.0",
 	"description": "Get property descriptor.",
 	"main": "dscrb.deploy.js",
 	"support": "dscrb.support.js",
 	"authors": [
 		"Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
 	],
 	"license": "MIT",
 	"keywords": [
@@ -22,5 +23,15 @@
 		"bower_components",
 		"test",
 		"tests"
-	]
+	],
+	"dependencies": {
+		"allkey": "^0.5.0",
+		"anykey": "^0.5.0",
+		"detr": "^0.4.0",
+		"falzy": "^0.23.0",
+		"harden": "^0.23.0",
+		"kein": "^0.30.0",
+		"raze": "^0.34.0",
+		"zelf": "^0.14.0"
+	}
 }

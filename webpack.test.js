@@ -1,10 +1,8 @@
 "use strict";
 
 const webpack = require( "webpack" );
-
-const DefinePlugin = webpack.DefinePlugin;
-const ModuleConcatenationPlugin = webpack.optimize.ModuleConcatenationPlugin;
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const ModuleConcatenationPlugin = webpack.optimize.ModuleConcatenationPlugin;
 
 module.exports = {
 	"entry": "./test.support.js",
@@ -39,10 +37,6 @@ module.exports = {
 		"filename": "test.deploy.js"
 	},
 	"plugins": [
-		new DefinePlugin( {
-			"process.env.NODE_ENV": '"production"'
-		} ),
-
 		new ModuleConcatenationPlugin( ),
 
 		new UglifyJsPlugin( {

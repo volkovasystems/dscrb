@@ -31,6 +31,7 @@ exports.config = {
 		"combined": true
 	},
 	"mochaOpts": {
-		"ui": "bdd"
+		"ui": "bdd",
+		"slow": 0
 	}
 };

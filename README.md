@@ -1,8 +1,10 @@
 # dscrb
 Get property descriptor.
 
+
 ### Note
 >The following global dependencies should be installed to speed up development procedures.
+
 1. `npm install flxc@latest --global`
 2. `npm install rsetmod@latest --global`
 3. `npm install njava@latest --global` (Non-Windows/Debian based)
@@ -23,7 +25,6 @@ Get property descriptor.
 ### Develop
 * Install `rsetmod` globally, run `npm install rsetmod@latest --global`
 * Run `npm run build`
-
 
 ### Test
 * Run `npm run test`
