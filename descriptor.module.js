@@ -79,8 +79,8 @@ const ENTITY = Symbol( "entity" );
 const DESCRIPTOR = Symbol( "descriptor" );
 const TYPE = Symbol( "type" );
 
-harden( "DATA_DESCRIPTOR", "data-descriptor" );
-harden( "ACCESSOR_DESCRIPTOR", "accessor-descriptor" );
+const DATA_DESCRIPTOR = "data-descriptor";
+const ACCESSOR_DESCRIPTOR = "accessor-descriptor";
 
 class Descriptor {
 	constructor( property, entity ){
@@ -113,18 +113,21 @@ class Descriptor {
 		this[ ENTITY ] = entity;
 
 		this.describe( );
+
 		this.determine( );
 	}
 
 	describe( ){
-		this[ DESCRIPTOR ] = wichevr( Object.getOwnPropertyDescriptor( this[ ENTITY ], this[ PROPERTY ] ),
-			{
-				"value": this[ ENTITY ][ this[ PROPERTY ] ],
-				"writable": true,
+		let value = this[ ENTITY ][ this[ PROPERTY ] ];
+		let enumerable = typeof this[ PROPERTY ] != "symbol";
 
-				"configurable": true,
-				"enumerable": ( protype( this[ PROPERTY ], SYMBOL )? false : true )
-			} );
+		this.setDescriptor( detr( this.extractDescriptor( ), {
+			"value": value,
+			"writable": true,
+
+			"configurable": true,
+			"enumerable": enumerable
+		} ) );
 
 		return this;
 	}
@@ -141,43 +144,27 @@ class Descriptor {
 		return this;
 	}
 
-	resolve( ){
-		let descriptor = {
-			"configurable": this[ DESCRIPTOR ].configurable,
-			"enumerable": this[ DESCRIPTOR ].enumerable
-		};
-
-		if( this[ TYPE ] === ACCESSOR_DESCRIPTOR ){
-			descriptor.get = this[ DESCRIPTOR ].get;
-			descriptor.set = this[ DESCRIPTOR ].set;
-		}
-
-		if( this[ TYPE ] === DATA_DESCRIPTOR ){
-			descriptor.value = this[ DESCRIPTOR ].value;
-			descriptor.writable = this[ DESCRIPTOR ].writable;
-		}
-
-		return descriptor;
-	}
-
 	get( ){
-		if( this[ TYPE ] === DATA_DESCRIPTOR ){
-			throw new Error( "cannot access get on data descriptor" );
+		if( this.isDataDescriptor( ) ){
+			return this[ DESCRIPTOR ].value;
 		}
 
 		return this[ DESCRIPTOR ].get.apply( this[ ENTITY ], raze( arguments ) );
 	}
 
-	set( ){
-		if( this[ TYPE ] === DATA_DESCRIPTOR ){
-			throw new Error( "cannot access set on data descriptor" );
+	set( value ){
+		if( this.isDataDescriptor( ) ){
+			this[ DESCRIPTOR ].value = value;
+
+		}else{
+			this[ DESCRIPTOR ].set.apply( this[ ENTITY ], raze( arguments ) );
 		}
 
-		return this[ DESCRIPTOR ].set.apply( this[ ENTITY ], raze( arguments ) );
+		return this;
 	}
 
 	value( ){
-		if( this[ TYPE ] === ACCESSOR_DESCRIPTOR ){
+		if( this.isAccessorDescriptor( ) ){
 			throw new Error( "cannot access value on accessor descriptor" );
 		}
 
@@ -185,7 +172,7 @@ class Descriptor {
 	}
 
 	writable( ){
-		if( this[ TYPE ] === ACCESSOR_DESCRIPTOR ){
+		if( this.isAccessorDescriptor( ) ){
 			throw new Error( "cannot access writable on accessor descriptor" );
 		}
 
@@ -200,35 +187,61 @@ class Descriptor {
 		return this[ DESCRIPTOR ].enumerable;
 	}
 
-	as( type ){
-		/*;
-			@meta-configuration:
-				{
-					"type:required": [
-						"string",
-						ACCESSOR_DESCRIPTOR,
-						DATA_DESCRIPTOR
-					]
-				}
-			@end-meta-configuration
-		*/
-
-		return this[ TYPE ] === type;
+	isAccessorDescriptor( ){
+		return this[ TYPE ] === ACCESSOR_DESCRIPTOR;
 	}
 
-	flush( ){
-		delete this[ ENTITY ];
-		delete this[ PROPERTY ];
+	isDataDescriptor( ){
+		return this[ TYPE ] === DATA_DESCRIPTOR;
+	}
+
+	resolveDescriptor( ){
+		let descriptor = {
+			"configurable": this[ DESCRIPTOR ].configurable,
+			"enumerable": this[ DESCRIPTOR ].enumerable
+		};
+
+		if( this.isAccessorDescriptor( ) ){
+			descriptor.get = this[ DESCRIPTOR ].get;
+			descriptor.set = this[ DESCRIPTOR ].set;
+		}
+
+		if( this.isDataDescriptor( ) ){
+			descriptor.value = this[ DESCRIPTOR ].value;
+			descriptor.writable = this[ DESCRIPTOR ].writable;
+		}
+
+		return descriptor;
+	}
+
+	extractDescriptor( ){
+		return Object.getOwnPropertyDescriptor( this[ ENTITY ], this[ PROPERTY ] );
+	}
+
+	getDescriptor( ){
+		return this[ DESCRIPTOR ];
+	}
+
+	applyDescriptor( ){
+		Object.defineProperty( this[ ENTITY ], this[ PROPERTY ], this[ DESCRIPTOR ] );
+
+		return this;
+	}
+
+	setDescriptor( descriptor ){
+		if( typeof descriptor == "object" ){
+			this[ DESCRIPTOR ] = descriptor;
+		}
 
 		return this;
 	}
 
 	toJSON( ){
-		return this.resolve( );
+		return this.resolveDescriptor( );
 	}
 
 	valueOf( ){
-		return this.resolve( );
+		return this.resolveDescriptor( );
 	}
 
 	toString( ){
