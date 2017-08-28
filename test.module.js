@@ -81,19 +81,23 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
-	describe( "`dscrb( 'property', { 'property': 'value' } ).resolveDescriptor( )`", ( ) => {
-		it( "should return a descriptor object with complete data descriptor properties", ( ) => {
-			let descriptor = dscrb( "property", { "property": "value" } ).resolveDescriptor( );
+	describe( "`dscrb( 'property', { 'property': 'value' } ).describe( )`", ( ) => {
+		it( "should return a descriptor object with complete descriptor properties", ( ) => {
+			let descriptor = dscrb( "property", { "property": "value" } ).describe( );
 
 			assert.equal( typeof descriptor, "object" );
 
 			assert.equal( "value" in descriptor, true );
 
-			assert.equal( "writable" in descriptor, true );
+			assert.equal( "get" in descriptor, true );
+
+			assert.equal( "set" in descriptor, true );
 
 			assert.equal( "configurable" in descriptor, true );
 
 			assert.equal( "enumerable" in descriptor, true );
+
+			assert.equal( "writable" in descriptor, true );
 		} );
 	} );
 
@@ -111,19 +115,23 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
-	describe( "`dscrb( 'property', { 'property': 'value' } ).resolveDescriptor( )`", ( ) => {
-		it( "should return a descriptor object with complete data descriptor properties", ( ) => {
-			let descriptor = dscrb( "property", { "property": "value" } ).resolveDescriptor( );
+	describe( "`dscrb( 'property', { 'property': 'value' } ).describe( )`", ( ) => {
+		it( "should return a descriptor object with complete descriptor properties", ( ) => {
+			let descriptor = dscrb( "property", { "property": "value" } ).describe( );
 
 			assert.equal( typeof descriptor, "object" );
 
 			assert.equal( "value" in descriptor, true );
 
-			assert.equal( "writable" in descriptor, true );
+			assert.equal( "get" in descriptor, true );
+
+			assert.equal( "set" in descriptor, true );
 
 			assert.equal( "configurable" in descriptor, true );
 
 			assert.equal( "enumerable" in descriptor, true );
+
+			assert.equal( "writable" in descriptor, true );
 		} );
 	} );
 
@@ -150,13 +158,13 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
-	describe( "`dscrb( 'property', { 'property': 'value' } ).resolveDescriptor( )`", ( ) => {
-		it( "should return a descriptor object with complete data descriptor properties", ( ) => {
+	describe( "`dscrb( 'property', { 'property': 'value' } ).describe( )`", ( ) => {
+		it( "should return a descriptor object with complete descriptor properties", ( ) => {
 			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					return JSON.stringify( dscrb( "property", { "property": "value" } ).resolveDescriptor( ) );
+					return JSON.stringify( Object.keys( dscrb( "property", { "property": "value" } ).describe( ) ) );
 				}
 
 			).value;
@@ -164,15 +172,19 @@ describe( "dscrb", ( ) => {
 
 			let descriptor = JSON.parse( result );
 
-			assert.equal( typeof descriptor, "object" );
+			assert.equal( descriptor.length, 6 );
 
-			assert.equal( "value" in descriptor, true );
+			assert.equal( descriptor.indexOf( "value" ) > -1, true );
 
-			assert.equal( "writable" in descriptor, true );
+			assert.equal( descriptor.indexOf( "get" ) > -1, true );
 
-			assert.equal( "configurable" in descriptor, true );
+			assert.equal( descriptor.indexOf( "set" ) > -1, true );
 
-			assert.equal( "enumerable" in descriptor, true );
+			assert.equal( descriptor.indexOf( "configurable" ) > -1, true );
+
+			assert.equal( descriptor.indexOf( "enumerable" ) > -1, true );
+
+			assert.equal( descriptor.indexOf( "writable" ) > -1, true );
 		} );
 	} );
 

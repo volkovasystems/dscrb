@@ -5,21 +5,21 @@
 		"passes": 2,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-10T12:14:48.799Z",
-		"end": "2017-08-10T12:14:48.808Z",
-		"duration": 9
+		"start": "2017-08-28T08:17:18.389Z",
+		"end": "2017-08-28T08:17:18.396Z",
+		"duration": 7
 	},
 	"tests": [
 		{
 			"title": "should return an instance of Descriptor",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } )` should return an instance of Descriptor",
-			"duration": 4,
+			"duration": 2,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
-			"title": "should return a descriptor object with complete data descriptor properties",
-			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).resolveDescriptor( )` should return a descriptor object with complete data descriptor properties",
+			"title": "should return a descriptor object with complete descriptor properties",
+			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).describe( )` should return a descriptor object with complete descriptor properties",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -31,13 +31,13 @@
 		{
 			"title": "should return an instance of Descriptor",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } )` should return an instance of Descriptor",
-			"duration": 4,
+			"duration": 2,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
-			"title": "should return a descriptor object with complete data descriptor properties",
-			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).resolveDescriptor( )` should return a descriptor object with complete data descriptor properties",
+			"title": "should return a descriptor object with complete descriptor properties",
+			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).describe( )` should return a descriptor object with complete descriptor properties",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
