@@ -4,8 +4,8 @@
 		"failed": 0,
 		"skipped": 0
 	},
-	"start": "2017-08-28T08:17:19.769Z",
-	"end": "2017-08-28T08:17:57.483Z",
+	"start": "2017-08-28T11:41:50.134Z",
+	"end": "2017-08-28T11:42:27.953Z",
 	"capabilities": {
 		"browserName": "chrome",
 		"chromeOptions": {
@@ -31,53 +31,53 @@
 		{
 			"name": "dscrb",
 			"duration": 0,
-			"start": "2017-08-28T08:17:57.102Z",
+			"start": "2017-08-28T11:42:27.588Z",
 			"tests": [],
 			"hooks": []
 		},
 		{
 			"name": "dscrb",
-			"duration": 211,
-			"start": "2017-08-28T08:17:57.103Z",
-			"end": "2017-08-28T08:17:57.314Z",
+			"duration": 195,
+			"start": "2017-08-28T11:42:27.589Z",
+			"end": "2017-08-28T11:42:27.784Z",
 			"tests": [],
 			"hooks": [
 				{
-					"start": "2017-08-28T08:17:57.105Z",
-					"end": "2017-08-28T08:17:57.106Z",
+					"start": "2017-08-28T11:42:27.595Z",
+					"end": "2017-08-28T11:42:27.595Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return an instance of Descriptor"
+				},
+				{
+					"start": "2017-08-28T11:42:27.707Z",
+					"end": "2017-08-28T11:42:27.707Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return an instance of Descriptor"
+				},
+				{
+					"start": "2017-08-28T11:42:27.708Z",
+					"end": "2017-08-28T11:42:27.709Z",
 					"duration": 1,
 					"title": "\"before each\" hook",
 					"associatedSuite": "dscrb",
-					"associatedTest": "should return an instance of Descriptor"
-				},
-				{
-					"start": "2017-08-28T08:17:57.231Z",
-					"end": "2017-08-28T08:17:57.231Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should return an instance of Descriptor"
-				},
-				{
-					"start": "2017-08-28T08:17:57.233Z",
-					"end": "2017-08-28T08:17:57.233Z",
-					"duration": 0,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
 					"associatedTest": "should return a descriptor object with complete descriptor properties"
 				},
 				{
-					"start": "2017-08-28T08:17:57.314Z",
-					"end": "2017-08-28T08:17:57.314Z",
+					"start": "2017-08-28T11:42:27.784Z",
+					"end": "2017-08-28T11:42:27.784Z",
 					"duration": 0,
 					"title": "\"after each\" hook",
 					"associatedSuite": "dscrb",
 					"associatedTest": "should return a descriptor object with complete descriptor properties"
 				},
 				{
-					"start": "2017-08-28T08:17:57.315Z",
-					"end": "2017-08-28T08:17:57.315Z",
-					"duration": 0,
+					"start": "2017-08-28T11:42:27.784Z",
+					"end": "2017-08-28T11:42:27.785Z",
+					"duration": 1,
 					"title": "\"after all\" hook",
 					"associatedSuite": "dscrb"
 				}
@@ -85,15 +85,15 @@
 		},
 		{
 			"name": "`dscrb( 'property', { 'property': 'value' } )`",
-			"duration": 128,
-			"start": "2017-08-28T08:17:57.104Z",
-			"end": "2017-08-28T08:17:57.232Z",
+			"duration": 118,
+			"start": "2017-08-28T11:42:27.590Z",
+			"end": "2017-08-28T11:42:27.708Z",
 			"tests": [
 				{
 					"name": "should return an instance of Descriptor",
-					"start": "2017-08-28T08:17:57.104Z",
-					"end": "2017-08-28T08:17:57.231Z",
-					"duration": 127,
+					"start": "2017-08-28T11:42:27.592Z",
+					"end": "2017-08-28T11:42:27.707Z",
+					"duration": 115,
 					"state": "pass"
 				}
 			],
@@ -101,15 +101,15 @@
 		},
 		{
 			"name": "`dscrb( 'property', { 'property': 'value' } ).describe( )`",
-			"duration": 82,
-			"start": "2017-08-28T08:17:57.232Z",
-			"end": "2017-08-28T08:17:57.314Z",
+			"duration": 76,
+			"start": "2017-08-28T11:42:27.708Z",
+			"end": "2017-08-28T11:42:27.784Z",
 			"tests": [
 				{
 					"name": "should return a descriptor object with complete descriptor properties",
-					"start": "2017-08-28T08:17:57.232Z",
-					"end": "2017-08-28T08:17:57.314Z",
-					"duration": 82,
+					"start": "2017-08-28T11:42:27.708Z",
+					"end": "2017-08-28T11:42:27.784Z",
+					"duration": 76,
 					"state": "pass"
 				}
 			],
