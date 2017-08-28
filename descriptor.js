@@ -49,36 +49,27 @@
 	@submodule-documentation:
 		Descriptor class wrapper.
 
-		This class was designed with strict adherence to the descriptor specification.
-		Certain methods may throw error if misused properly.
+		This class will be used to augment the descriptor structure.
+		This will be used to just get values from the descriptor.
+
+		This will make the data and accessor descriptor as one.
 	@end-submodule-documentation
 
 	@include:
 		{
-			"allkey": "allkey",
-			"anykey": "anykey",
-			"detr": "detr",
 			"falzy": "falzy",
-			"kein": "kein",
-			"raze": "raze"
+			"kein": "kein"
 		}
 	@end-include
 */
 
-const allkey = require( "allkey" );
-const anykey = require( "anykey" );
-const detr = require( "detr" );
 const falzy = require( "falzy" );
 const kein = require( "kein" );
-const raze = require( "raze" );
 
 const DESCRIPTOR = Symbol( "descriptor" );
 const ENTITY = Symbol( "entity" );
 const PROPERTY = Symbol( "property" );
 const TYPE = Symbol( "type" );
-
-const ACCESSOR_DESCRIPTOR = "accessor-descriptor";
-const DATA_DESCRIPTOR = "data-descriptor";
 
 class Descriptor {
 	constructor( property, entity ){
@@ -97,7 +88,11 @@ class Descriptor {
 
 		if(
 			falzy( property )
-			|| ( typeof property != "number" && typeof property != "string" && typeof property != "symbol" )
+			|| (
+				typeof property != "number"
+				&& typeof property != "string"
+				&& typeof property != "symbol"
+			)
 		){
 			throw new Error( "invalid property" );
 		}
@@ -114,82 +109,118 @@ class Descriptor {
 		this[ ENTITY ] = entity;
 
 		this.describe( );
-
-		this.determine( );
 	}
 
 	describe( ){
+		if( this[ DESCRIPTOR ] ){
+			return this[ DESCRIPTOR ];
+		}
+
+		let descriptor = { };
+		try{
+			descriptor = Object.getOwnPropertyDescriptor( this[ ENTITY ], this[ PROPERTY ] );
+
+		}catch( error ){ }
+
 		let value = this[ ENTITY ][ this[ PROPERTY ] ];
-		let enumerable = typeof this[ PROPERTY ] != "symbol";
+		if( typeof value == "undefined" ){
+			value = descriptor.value;
+		}
 
-		this.setDescriptor( detr( this.extractDescriptor( ), function defer( descriptor ){
-			if( anykey( [ "get", "set" ], descriptor ) ){
-				return {
-					"get": descriptor.get,
-					"set": descriptor.set,
+		if(
+			typeof value == "undefined"
+			&& typeof descriptor.get == "function"
+		){
+			value = descriptor.get( );
+		}
 
-					"configurable": true,
-					"enumerable": enumerable
-				};
+		let self = this;
+		let privateProperty = Symbol( `-${ this[ PROPERTY ] }` );
 
-			}else{
-				return {
-					"value": descriptor.value,
-					"writable": true,
-
-					"configurable": true,
-					"enumerable": enumerable
-				};
+		let get = descriptor.get;
+		if( typeof get != "function" ){
+			get = function get( ){
+				return self[ ENTITY ][ privateProperty ];
 			}
-		} ) );
-
-		return this;
-	}
-
-	determine( ){
-		if( anykey( [ "get", "set" ], this[ DESCRIPTOR ] ) ){
-			this[ TYPE ] = ACCESSOR_DESCRIPTOR;
 		}
 
-		if( allkey( [ "value", "writable" ], this[ DESCRIPTOR ] ) ){
-			this[ TYPE ] = DATA_DESCRIPTOR;
+		let set = descriptor.set;
+		if( typeof set != "function" ){
+			set = function set( value ){
+				self[ ENTITY ][ privateProperty ] = value;
+
+				return self[ ENTITY ];
+			};
 		}
 
-		return this;
+		/*;
+			@note:
+				All property values are configurable unless stated and/or
+					the entity is not frozen or sealed.
+			@end-note
+		*/
+		let configurable = descriptor.configurable;
+		if( typeof configurable != "boolean" ){
+			configurable = !Object.isFrozen( this[ ENTITY ] ) && !Object.isSealed( this[ ENTITY ] );
+		}
+
+		/*;
+			@note:
+				All property values are enumerable by default unless,
+					the property is stated as false or the property is a symbol.
+			@end-note
+		*/
+		let enumerable = descriptor.enumerable;
+		if( typeof this[ PROPERTY ] == "symbol" ){
+			enumerable = false;
+		}
+
+		if( typeof enumerable != "boolean" ){
+			enumerable = true;
+		}
+
+		/*;
+			@note:
+				If the writable property does not exist, it is false by default
+					which means the descriptor is an accessor descriptor
+					and you cannot simply assign a value without calling
+					the setter method which implies that it is not writable
+					in a sense that writability semantics requires direct
+					value assignment.
+			@end-note
+		*/
+		let writable = descriptor.writable;
+		if( typeof writable != "boolean" ){
+			writable = false;
+		}
+
+		this[ DESCRIPTOR ] = Object.freeze( {
+			"value": value,
+
+			"get": get,
+			"set": set,
+
+			"configurable": configurable,
+			"enumerable": enumerable,
+			"writable": writable
+		} );
+
+		return this[ DESCRIPTOR ];
 	}
 
 	get( ){
-		if( this.isDataDescriptor( ) ){
-			return this[ DESCRIPTOR ].value;
-		}
-
-		return this[ DESCRIPTOR ].get.apply( this[ ENTITY ], raze( arguments ) );
+		return this[ DESCRIPTOR ].get;
 	}
 
-	set( value ){
-		if( this.isDataDescriptor( ) ){
-			this[ DESCRIPTOR ].value = value;
-
-		}else{
-			this[ DESCRIPTOR ].set.apply( this[ ENTITY ], raze( arguments ) );
-		}
-
-		return this;
+	set( ){
+		return this[ DESCRIPTOR ].set;
 	}
 
 	value( ){
-		if( this.isAccessorDescriptor( ) ){
-			return this.get( );
-		}
-
 		return this[ DESCRIPTOR ].value;
 	}
 
 	writable( ){
-		if( this.isAccessorDescriptor( ) ){
-			return false;
-		}
-
 		return this[ DESCRIPTOR ].writable;
 	}
 
@@ -201,94 +232,13 @@ class Descriptor {
 		return this[ DESCRIPTOR ].enumerable;
 	}
 
-	isAccessorDescriptor( ){
-		return this[ TYPE ] === ACCESSOR_DESCRIPTOR;
-	}
-
-	isDataDescriptor( ){
-		return this[ TYPE ] === DATA_DESCRIPTOR;
-	}
-
-	resolveDescriptor( ){
-		let descriptor = {
-			"configurable": this[ DESCRIPTOR ].configurable,
-			"enumerable": this[ DESCRIPTOR ].enumerable
-		};
-
-		if( this.isAccessorDescriptor( ) ){
-			descriptor.get = this[ DESCRIPTOR ].get || ( function get( ){
-				return this.value;
-			} ).bind( this[ DESCRIPTOR ] );
-
-			descriptor.set = this[ DESCRIPTOR ].set || ( function set( value ){
-				this.value = value;
-
-				return this;
-			} ).bind( this[ DESCRIPTOR ] );
-		}
-
-		if( this.isDataDescriptor( ) ){
-			descriptor.value = this[ DESCRIPTOR ].value;
-			descriptor.writable = this[ DESCRIPTOR ].writable;
-		}
-
-		return Object.freeze( descriptor );
-	}
-
-	extractDescriptor( ){
+	get descriptor( ){
 		try{
-			return Object.getOwnPropertyDescriptor( this[ ENTITY ], this[ PROPERTY ] );
+			return Object.freeze( Object.getOwnPropertyDescriptor( this[ ENTITY ], this[ PROPERTY ] ) );
 
 		}catch( error ){
-			return { };
+			return Object.freeze( { } );
 		}
-	}
-
-	applyDescriptor( ){
-		/*;
-			@note:
-				There's no sense to apply descriptor to falsy, non-object or non-function entity.
-			@end-note
-		*/
-		if(
-			typeof this[ ENTITY ] != "object"
-			&& typeof this[ ENTITY ] != "function"
-		){
-			return this;
-		}
-
-		try{
-			Object.defineProperty( this[ ENTITY ], this[ PROPERTY ], this.resolveDescriptor( ) );
-
-		}catch( error ){
-			throw new Error( `cannot apply descriptor, ${ error.stack }` );
-		}
-
-		return this;
-	}
-
-	getDescriptor( ){
-		return this.resolveDescriptor( );
-	}
-
-	setDescriptor( descriptor ){
-		if( typeof descriptor == "object" ){
-			this[ DESCRIPTOR ] = descriptor;
-		}
-
-		return this;
-	}
-
-	toJSON( ){
-		return this.resolveDescriptor( );
-	}
-
-	valueOf( ){
-		return this.resolveDescriptor( );
-	}
-
-	toString( ){
-		return JSON.stringify( this.toJSON( ) );
 	}
 }
 

@@ -10,7 +10,9 @@ exports.config = {
 					"headless"
 				]
 			},
-			"proxy": null
+			"proxy": {
+				"proxyType": "direct"
+			}
 		}
 	],
 	"sync": true,
