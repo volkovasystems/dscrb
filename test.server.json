@@ -5,15 +5,15 @@
 		"passes": 4,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-09-04T03:29:50.055Z",
-		"end": "2017-09-04T03:29:50.063Z",
-		"duration": 8
+		"start": "2017-09-04T03:33:48.119Z",
+		"end": "2017-09-04T03:33:48.124Z",
+		"duration": 5
 	},
 	"tests": [
 		{
 			"title": "should return an instance of Descriptor",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } )` should return an instance of Descriptor",
-			"duration": 3,
+			"duration": 2,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -45,7 +45,7 @@
 		{
 			"title": "should return an instance of Descriptor",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } )` should return an instance of Descriptor",
-			"duration": 3,
+			"duration": 2,
 			"currentRetry": 0,
 			"err": {}
 		},

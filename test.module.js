@@ -268,7 +268,7 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
-	describe( "`dscrb( 'property', { 'property': 'value' } ).describe( )`", ( ) => {
+	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).describe( )`", ( ) => {
 		it( "should return a descriptor object with complete descriptor properties", ( ) => {
 			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
