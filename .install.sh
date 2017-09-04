@@ -3,6 +3,7 @@ babel-runtime \
 falzy \
 harden \
 kein \
+stringe \
 zelf \
 --save && \
 yarn add \
@@ -33,6 +34,7 @@ bower install \
 falzy \
 harden \
 kein \
+stringe \
 zelf \
 --save \
 --force-latest
