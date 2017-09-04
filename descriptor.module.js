@@ -58,13 +58,15 @@
 	@include:
 		{
 			"falzy": "falzy",
-			"kein": "kein"
+			"kein": "kein",
+			"stringe": "stringe"
 		}
 	@end-include
 */
 
 const falzy = require( "falzy" );
 const kein = require( "kein" );
+const stringe = require( "stringe" );
 
 const DESCRIPTOR = Symbol( "descriptor" );
 const ENTITY = Symbol( "entity" );
@@ -135,7 +137,7 @@ class Descriptor {
 		}
 
 		let self = this;
-		let privateProperty = Symbol( `-${ this[ PROPERTY ] }` );
+		let privateProperty = Symbol( `-${ stringe( this[ PROPERTY ] ) }` );
 
 		let get = descriptor.get;
 		if( typeof get != "function" ){

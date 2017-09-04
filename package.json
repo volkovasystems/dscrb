@@ -1,6 +1,6 @@
 {
 	"name": "dscrb",
-	"version": "0.8.0",
+	"version": "0.9.0",
 	"description": "Get property descriptor.",
 	"main": "dscrb.js",
 	"support": "dscrb.support.js",
@@ -51,6 +51,7 @@
 		"falzy": "^0.23.0",
 		"harden": "^0.23.0",
 		"kein": "^0.30.0",
+		"stringe": "^0.6.0",
 		"zelf": "^0.14.0"
 	},
 	"devDependencies": {
@@ -68,7 +69,7 @@
 		"gulp-replace": "^0.6.1",
 		"gulp-sourcemaps": "^2.6.1",
 		"mocha": "^3.5.0",
-		"should": "^11.2.1",
+		"should": "^12.0.0",
 		"source-map-loader": "^0.2.1",
 		"wdio-json-reporter": "^0.2.1",
 		"wdio-mocha-framework": "^0.5.11",

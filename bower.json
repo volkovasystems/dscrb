@@ -1,6 +1,6 @@
 {
 	"name": "dscrb",
-	"version": "0.8.0",
+	"version": "0.9.0",
 	"description": "Get property descriptor.",
 	"main": "dscrb.deploy.js",
 	"support": "dscrb.support.js",
@@ -24,10 +24,14 @@
 		"test",
 		"tests"
 	],
+	"resolutions": {
+		"stringe": "^0.6.0"
+	},
 	"dependencies": {
 		"falzy": "^0.23.0",
 		"harden": "^0.23.0",
 		"kein": "^0.30.0",
+		"stringe": "^0.6.0",
 		"zelf": "^0.14.0"
 	}
 }
