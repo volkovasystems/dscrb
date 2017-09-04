@@ -38,8 +38,8 @@ acorn@4.X, acorn@^4.0.3:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
 
 acorn@^5.0.0, acorn@^5.0.3:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.1.1.tgz#53fe161111f912ab999ee887a90a0bc52822fd75"
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.1.2.tgz#911cb53e036807cf0fa778dc5d370fbd864246d7"
 
 ajv-keywords@^2.0.0:
   version "2.1.0"
@@ -938,8 +938,8 @@ camelcase@^4.1.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
 caniuse-lite@^1.0.30000718:
-  version "1.0.30000721"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000721.tgz#931a21a7bd85016300328d21f126d84b73437d35"
+  version "1.0.30000722"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000722.tgz#8cbfe07440478e3a16ab0d3b182feef1901eab55"
 
 caseless@~0.11.0:
   version "0.11.0"
@@ -4115,6 +4115,12 @@ stringe@^0.5.0:
   resolved "https://registry.yarnpkg.com/stringe/-/stringe-0.5.0.tgz#7b2e25c7a652bb67dd2e573f203bb2a21d72e66d"
   dependencies:
     babel-runtime "^6.23.0"
+
+stringe@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/stringe/-/stringe-0.6.0.tgz#1b6d11dbaaa7999613669453b5ea4cdd5745c7c4"
+  dependencies:
+    babel-runtime "^6.26.0"
 
 stringify-object@^3.0.0:
   version "3.2.0"

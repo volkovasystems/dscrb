@@ -1,19 +1,19 @@
 {
 	"stats": {
-		"suites": 5,
-		"tests": 4,
-		"passes": 4,
+		"suites": 6,
+		"tests": 5,
+		"passes": 5,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-09-04T03:33:48.119Z",
-		"end": "2017-09-04T03:33:48.124Z",
-		"duration": 5
+		"start": "2017-09-04T11:11:08.878Z",
+		"end": "2017-09-04T11:11:08.884Z",
+		"duration": 6
 	},
 	"tests": [
 		{
 			"title": "should return an instance of Descriptor",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } )` should return an instance of Descriptor",
-			"duration": 2,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -27,6 +27,13 @@
 		{
 			"title": "should return a descriptor object with complete descriptor properties",
 			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).describe( )` should return a descriptor object with complete descriptor properties",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return a descriptor object with complete descriptor properties",
+			"fullTitle": "dscrb `dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).describe( )` should return a descriptor object with complete descriptor properties",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -45,7 +52,7 @@
 		{
 			"title": "should return an instance of Descriptor",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } )` should return an instance of Descriptor",
-			"duration": 2,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -59,6 +66,13 @@
 		{
 			"title": "should return a descriptor object with complete descriptor properties",
 			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).describe( )` should return a descriptor object with complete descriptor properties",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return a descriptor object with complete descriptor properties",
+			"fullTitle": "dscrb `dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).describe( )` should return a descriptor object with complete descriptor properties",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}

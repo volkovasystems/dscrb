@@ -24,10 +24,14 @@
 		"test",
 		"tests"
 	],
+	"resolutions": {
+		"stringe": "^0.6.0"
+	},
 	"dependencies": {
 		"falzy": "^0.23.0",
 		"harden": "^0.23.0",
 		"kein": "^0.30.0",
+		"stringe": "^0.6.0",
 		"zelf": "^0.14.0"
 	}
 }
