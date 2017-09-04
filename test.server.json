@@ -1,25 +1,39 @@
 {
 	"stats": {
-		"suites": 3,
-		"tests": 2,
-		"passes": 2,
+		"suites": 5,
+		"tests": 4,
+		"passes": 4,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-28T11:41:48.883Z",
-		"end": "2017-08-28T11:41:48.890Z",
-		"duration": 7
+		"start": "2017-09-04T03:29:50.055Z",
+		"end": "2017-09-04T03:29:50.063Z",
+		"duration": 8
 	},
 	"tests": [
 		{
 			"title": "should return an instance of Descriptor",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } )` should return an instance of Descriptor",
-			"duration": 1,
+			"duration": 3,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should return a descriptor object with complete descriptor properties",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).describe( )` should return a descriptor object with complete descriptor properties",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return a descriptor object with complete descriptor properties",
+			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).describe( )` should return a descriptor object with complete descriptor properties",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return a descriptor object with complete descriptor properties",
+			"fullTitle": "dscrb `dscrb( 'name', function yeah( ){ } ).describe( )` should return a descriptor object with complete descriptor properties",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -31,13 +45,27 @@
 		{
 			"title": "should return an instance of Descriptor",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } )` should return an instance of Descriptor",
-			"duration": 1,
+			"duration": 3,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should return a descriptor object with complete descriptor properties",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).describe( )` should return a descriptor object with complete descriptor properties",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return a descriptor object with complete descriptor properties",
+			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).describe( )` should return a descriptor object with complete descriptor properties",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return a descriptor object with complete descriptor properties",
+			"fullTitle": "dscrb `dscrb( 'name', function yeah( ){ } ).describe( )` should return a descriptor object with complete descriptor properties",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}

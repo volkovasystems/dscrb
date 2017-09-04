@@ -97,6 +97,46 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
+	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).describe( )`", ( ) => {
+		it( "should return a descriptor object with complete descriptor properties", ( ) => {
+			let descriptor = dscrb( "length", [ 1, 2, 3 ] ).describe( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "get" in descriptor, true );
+
+			assert.equal( "set" in descriptor, true );
+
+			assert.equal( "configurable" in descriptor, true );
+
+			assert.equal( "enumerable" in descriptor, true );
+
+			assert.equal( "writable" in descriptor, true );
+		} );
+	} );
+
+	describe( "`dscrb( 'name', function yeah( ){ } ).describe( )`", ( ) => {
+		it( "should return a descriptor object with complete descriptor properties", ( ) => {
+			let descriptor = dscrb( "name", function yeah( ){ } ).describe( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "get" in descriptor, true );
+
+			assert.equal( "set" in descriptor, true );
+
+			assert.equal( "configurable" in descriptor, true );
+
+			assert.equal( "enumerable" in descriptor, true );
+
+			assert.equal( "writable" in descriptor, true );
+		} );
+	} );
+
 } );
 //: @end-server
 
