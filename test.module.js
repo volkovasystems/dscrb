@@ -197,6 +197,42 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
+	describe( "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).configurable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "test" } ).configurable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).writable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "test" } ).writable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).enumerable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( dscrb( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "test" } ).enumerable( ), false );
+		} );
+	} );
+
+	describe( "`dscrb( 'name', function yeah( ){ } ).configurable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( "name", function yeah( ){ } ).configurable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 'name', function yeah( ){ } ).writable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( dscrb( "name", function yeah( ){ } ).writable( ), false );
+		} );
+	} );
+
+	describe( "`dscrb( 'name', function yeah( ){ } ).enumerable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( dscrb( "name", function yeah( ){ } ).enumerable( ), false );
+		} );
+	} );
+
 } );
 //: @end-server
 
@@ -306,6 +342,60 @@ describe( "dscrb", ( ) => {
 	describe( "`dscrb( 'property', { 'property': 'value' } ).enumerable( )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( dscrb( "property", { "property": "value" } ).enumerable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).configurable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( dscrb( 'length', [ 1, 2, 3 ] ).configurable( ), false );
+		} );
+	} );
+
+	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).writable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( 'length', [ 1, 2, 3 ] ).writable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( dscrb( 'length', [ 1, 2, 3 ] ).enumerable( ), false );
+		} );
+	} );
+
+	describe( "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).configurable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "test" } ).configurable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).writable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "test" } ).writable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).enumerable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( dscrb( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "test" } ).enumerable( ), false );
+		} );
+	} );
+
+	describe( "`dscrb( 'name', function yeah( ){ } ).configurable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( "name", function yeah( ){ } ).configurable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 'name', function yeah( ){ } ).writable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( dscrb( "name", function yeah( ){ } ).writable( ), false );
+		} );
+	} );
+
+	describe( "`dscrb( 'name', function yeah( ){ } ).enumerable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( dscrb( "name", function yeah( ){ } ).enumerable( ), false );
 		} );
 	} );
 
