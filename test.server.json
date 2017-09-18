@@ -1,13 +1,13 @@
 {
 	"stats": {
-		"suites": 6,
-		"tests": 5,
-		"passes": 5,
+		"suites": 18,
+		"tests": 17,
+		"passes": 17,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-09-04T11:11:08.878Z",
-		"end": "2017-09-04T11:11:08.884Z",
-		"duration": 6
+		"start": "2017-09-18T07:29:51.153Z",
+		"end": "2017-09-18T07:29:51.161Z",
+		"duration": 8
 	},
 	"tests": [
 		{
@@ -41,6 +41,90 @@
 		{
 			"title": "should return a descriptor object with complete descriptor properties",
 			"fullTitle": "dscrb `dscrb( 'name', function yeah( ){ } ).describe( )` should return a descriptor object with complete descriptor properties",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).configurable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).writable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).enumerable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).configurable( )` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).writable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).configurable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).writable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "dscrb `dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).enumerable( )` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 'name', function yeah( ){ } ).configurable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "dscrb `dscrb( 'name', function yeah( ){ } ).writable( )` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "dscrb `dscrb( 'name', function yeah( ){ } ).enumerable( )` should be equal to false",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -80,6 +164,90 @@
 		{
 			"title": "should return a descriptor object with complete descriptor properties",
 			"fullTitle": "dscrb `dscrb( 'name', function yeah( ){ } ).describe( )` should return a descriptor object with complete descriptor properties",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).configurable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).writable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).enumerable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).configurable( )` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).writable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).configurable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).writable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "dscrb `dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).enumerable( )` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 'name', function yeah( ){ } ).configurable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "dscrb `dscrb( 'name', function yeah( ){ } ).writable( )` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "dscrb `dscrb( 'name', function yeah( ){ } ).enumerable( )` should be equal to false",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
