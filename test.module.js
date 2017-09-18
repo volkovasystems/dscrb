@@ -181,19 +181,19 @@ describe( "dscrb", ( ) => {
 
 	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).configurable( )`", ( ) => {
 		it( "should be equal to false", ( ) => {
-			assert.equal( dscrb( 'length', [ 1, 2, 3 ] ).configurable( ), false );
+			assert.equal( dscrb( "length", [ 1, 2, 3 ] ).configurable( ), false );
 		} );
 	} );
 
 	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).writable( )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-			assert.equal( dscrb( 'length', [ 1, 2, 3 ] ).writable( ), true );
+			assert.equal( dscrb( "length", [ 1, 2, 3 ] ).writable( ), true );
 		} );
 	} );
 
 	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )`", ( ) => {
 		it( "should be equal to false", ( ) => {
-			assert.equal( dscrb( 'length', [ 1, 2, 3 ] ).enumerable( ), false );
+			assert.equal( dscrb( "length", [ 1, 2, 3 ] ).enumerable( ), false );
 		} );
 	} );
 
@@ -347,19 +347,19 @@ describe( "dscrb", ( ) => {
 
 	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).configurable( )`", ( ) => {
 		it( "should be equal to false", ( ) => {
-			assert.equal( dscrb( 'length', [ 1, 2, 3 ] ).configurable( ), false );
+			assert.equal( dscrb( "length", [ 1, 2, 3 ] ).configurable( ), false );
 		} );
 	} );
 
 	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).writable( )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-			assert.equal( dscrb( 'length', [ 1, 2, 3 ] ).writable( ), true );
+			assert.equal( dscrb( "length", [ 1, 2, 3 ] ).writable( ), true );
 		} );
 	} );
 
 	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )`", ( ) => {
 		it( "should be equal to false", ( ) => {
-			assert.equal( dscrb( 'length', [ 1, 2, 3 ] ).enumerable( ), false );
+			assert.equal( dscrb( "length", [ 1, 2, 3 ] ).enumerable( ), false );
 		} );
 	} );
 
@@ -539,6 +539,189 @@ describe( "dscrb", ( ) => {
 			assert.equal( descriptor.indexOf( "enumerable" ) > -1, true );
 
 			assert.equal( descriptor.indexOf( "writable" ) > -1, true );
+		} );
+	} );
+
+	describe( "`dscrb( 'property', { 'property': 'value' } ).configurable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( "property", { "property": "value" } ).configurable( );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb( 'property', { 'property': 'value' } ).writable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( "property", { "property": "value" } ).writable( );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb( 'property', { 'property': 'value' } ).enumerable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( "property", { "property": "value" } ).enumerable( );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).configurable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( "length", [ 1, 2, 3 ] ).configurable( );
+				}
+
+			).value;
+
+			assert.equal( result, false );
+
+		} );
+	} );
+
+	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).writable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( "length", [ 1, 2, 3 ] ).writable( );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( "length", [ 1, 2, 3 ] ).enumerable( );
+				}
+
+			).value;
+
+			assert.equal( result, false );
+
+		} );
+	} );
+
+	describe( "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).configurable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "test" } ).configurable( );
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).writable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "test" } ).writable( );
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).enumerable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "test" } ).enumerable( );
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, false );
+
+		} );
+	} );
+
+	describe( "`dscrb( 'name', function yeah( ){ } ).configurable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( "name", function yeah( ){ } ).configurable( );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb( 'name', function yeah( ){ } ).writable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( "name", function yeah( ){ } ).writable( );
+				}
+
+			).value;
+
+			assert.equal( result, false );
+
+		} );
+	} );
+
+	describe( "`dscrb( 'name', function yeah( ){ } ).enumerable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( "name", function yeah( ){ } ).enumerable( );
+				}
+
+			).value;
+
+			assert.equal( result, false );
+
 		} );
 	} );
 
