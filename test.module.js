@@ -179,6 +179,24 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
+	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).configurable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( dscrb( 'length', [ 1, 2, 3 ] ).configurable( ), false );
+		} );
+	} );
+
+	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).writable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( 'length', [ 1, 2, 3 ] ).writable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( dscrb( 'length', [ 1, 2, 3 ] ).enumerable( ), false );
+		} );
+	} );
+
 } );
 //: @end-server
 
