@@ -49,14 +49,14 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"dscrb": "dscrb",
 			"path": "path"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const dscrb = require( "./dscrb.js" );
@@ -161,6 +161,24 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
+	describe( "`dscrb( 'property', { 'property': 'value' } ).configurable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( "property", { "property": "value" } ).configurable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 'property', { 'property': 'value' } ).writable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( "property", { "property": "value" } ).writable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 'property', { 'property': 'value' } ).enumerable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( "property", { "property": "value" } ).enumerable( ), true );
+		} );
+	} );
+
 } );
 //: @end-server
 
@@ -252,6 +270,24 @@ describe( "dscrb", ( ) => {
 			assert.equal( "enumerable" in descriptor, true );
 
 			assert.equal( "writable" in descriptor, true );
+		} );
+	} );
+
+	describe( "`dscrb( 'property', { 'property': 'value' } ).configurable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( "property", { "property": "value" } ).configurable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 'property', { 'property': 'value' } ).writable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( "property", { "property": "value" } ).writable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 'property', { 'property': 'value' } ).enumerable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( "property", { "property": "value" } ).enumerable( ), true );
 		} );
 	} );
 
