@@ -1,13 +1,13 @@
 {
 	"stats": {
-		"suites": 22,
-		"tests": 21,
-		"passes": 21,
+		"suites": 26,
+		"tests": 25,
+		"passes": 25,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-09-22T07:29:10.197Z",
-		"end": "2017-09-22T07:29:10.207Z",
-		"duration": 10
+		"start": "2017-09-22T08:11:56.040Z",
+		"end": "2017-09-22T08:11:56.051Z",
+		"duration": 11
 	},
 	"tests": [
 		{
@@ -27,6 +27,13 @@
 		{
 			"title": "should return a descriptor object with complete descriptor properties",
 			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).describe( )` should return a descriptor object with complete descriptor properties",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return a descriptor object with complete descriptor properties",
+			"fullTitle": "dscrb `dscrb( 1, { 0: 'hello', 1: 'world' } ).describe( )` should return a descriptor object with complete descriptor properties",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -55,7 +62,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).configurable( )` should be equal to true",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -91,6 +98,27 @@
 			"title": "should be equal to false",
 			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )` should be equal to false",
 			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 1, { 0: 'hello', 1: 'world' } ).configurable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 1, { 0: 'hello', 1: 'world' } ).writable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 1, { 0: 'hello', 1: 'world' } ).enumerable( )` should be equal to true",
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -139,7 +167,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "dscrb `dscrb configurable method with symbol type property and function type entity` should be equal to true",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -153,7 +181,7 @@
 		{
 			"title": "should be equal to false",
 			"fullTitle": "dscrb `dscrb enumerable method with symbol type property and function type entity` should be equal to false",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		}
@@ -184,6 +212,13 @@
 		},
 		{
 			"title": "should return a descriptor object with complete descriptor properties",
+			"fullTitle": "dscrb `dscrb( 1, { 0: 'hello', 1: 'world' } ).describe( )` should return a descriptor object with complete descriptor properties",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return a descriptor object with complete descriptor properties",
 			"fullTitle": "dscrb `dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).describe( )` should return a descriptor object with complete descriptor properties",
 			"duration": 0,
 			"currentRetry": 0,
@@ -206,7 +241,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).configurable( )` should be equal to true",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -242,6 +277,27 @@
 			"title": "should be equal to false",
 			"fullTitle": "dscrb `dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )` should be equal to false",
 			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 1, { 0: 'hello', 1: 'world' } ).configurable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 1, { 0: 'hello', 1: 'world' } ).writable( )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb( 1, { 0: 'hello', 1: 'world' } ).enumerable( )` should be equal to true",
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -290,7 +346,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "dscrb `dscrb configurable method with symbol type property and function type entity` should be equal to true",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -304,7 +360,7 @@
 		{
 			"title": "should be equal to false",
 			"fullTitle": "dscrb `dscrb enumerable method with symbol type property and function type entity` should be equal to false",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		}
