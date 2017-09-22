@@ -161,6 +161,29 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
+	describe( "`dscrb with symbol type property and function type entity`", ( ) => {
+		it( "should return a descriptor object with complete descriptor properties", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+			let descriptor = dscrb( Symbol.for( "extensive" ), Hello ).describe( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "get" in descriptor, true );
+
+			assert.equal( "set" in descriptor, true );
+
+			assert.equal( "configurable" in descriptor, true );
+
+			assert.equal( "enumerable" in descriptor, true );
+
+			assert.equal( "writable" in descriptor, true );
+
+		} );
+	} );
+
 	describe( "`dscrb( 'property', { 'property': 'value' } ).configurable( )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( dscrb( "property", { "property": "value" } ).configurable( ), true );
@@ -324,6 +347,29 @@ describe( "dscrb", ( ) => {
 			assert.equal( "enumerable" in descriptor, true );
 
 			assert.equal( "writable" in descriptor, true );
+		} );
+	} );
+
+	describe( "`dscrb with symbol type property and function type entity`", ( ) => {
+		it( "should return a descriptor object with complete descriptor properties", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+			let descriptor = dscrb( Symbol.for( "extensive" ), Hello ).describe( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "get" in descriptor, true );
+
+			assert.equal( "set" in descriptor, true );
+
+			assert.equal( "configurable" in descriptor, true );
+
+			assert.equal( "enumerable" in descriptor, true );
+
+			assert.equal( "writable" in descriptor, true );
+
 		} );
 	} );
 
@@ -539,6 +585,42 @@ describe( "dscrb", ( ) => {
 			assert.equal( descriptor.indexOf( "enumerable" ) > -1, true );
 
 			assert.equal( descriptor.indexOf( "writable" ) > -1, true );
+
+		} );
+	} );
+
+	describe( "`dscrb with symbol type property and function type entity`", ( ) => {
+		it( "should return a descriptor object with complete descriptor properties", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let Hello = function Hello( ){ };
+					Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+					let descriptor = dscrb( Symbol.for( "extensive" ), Hello ).describe( );
+
+					return JSON.stringify( Object.keys( descriptor ) );
+				}
+
+			).value;
+			//: @end-ignore
+
+			let descriptor = JSON.parse( result );
+
+			assert.equal( descriptor.length, 6 );
+
+			assert.equal( descriptor.indexOf( "value" ) > -1, true );
+
+			assert.equal( descriptor.indexOf( "get" ) > -1, true );
+
+			assert.equal( descriptor.indexOf( "set" ) > -1, true );
+
+			assert.equal( descriptor.indexOf( "configurable" ) > -1, true );
+
+			assert.equal( descriptor.indexOf( "enumerable" ) > -1, true );
+
+			assert.equal( descriptor.indexOf( "writable" ) > -1, true );
+
 		} );
 	} );
 
