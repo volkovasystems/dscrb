@@ -672,6 +672,37 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
+	describe( "`dscrb( 1, { 0: 'hello', 1: 'world' } ).describe( )`", ( ) => {
+		it( "should return a descriptor object with complete descriptor properties", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( Object.keys( dscrb( 1, { 0: "hello", 1: "world" } ).describe( ) ) );
+				}
+
+			).value;
+			//: @end-ignore
+
+			let descriptor = JSON.parse( result );
+
+			assert.equal( descriptor.length, 6 );
+
+			assert.equal( descriptor.indexOf( "value" ) > -1, true );
+
+			assert.equal( descriptor.indexOf( "get" ) > -1, true );
+
+			assert.equal( descriptor.indexOf( "set" ) > -1, true );
+
+			assert.equal( descriptor.indexOf( "configurable" ) > -1, true );
+
+			assert.equal( descriptor.indexOf( "enumerable" ) > -1, true );
+
+			assert.equal( descriptor.indexOf( "writable" ) > -1, true );
+
+		} );
+	} );
+
 	describe( "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).describe( )`", ( ) => {
 		it( "should return a descriptor object with complete descriptor properties", ( ) => {
 			//: @ignore:
@@ -854,6 +885,51 @@ describe( "dscrb", ( ) => {
 			).value;
 
 			assert.equal( result, false );
+
+		} );
+	} );
+
+	describe( "`dscrb( 1, { 0: 'hello', 1: 'world' } ).configurable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( 1, { 0: "hello", 1: "world" } ).configurable( );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb( 1, { 0: 'hello', 1: 'world' } ).writable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( 1, { 0: "hello", 1: "world" } ).writable( );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb( 1, { 0: 'hello', 1: 'world' } ).enumerable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return dscrb( 1, { 0: "hello", 1: "world" } ).enumerable( );
+				}
+
+			).value;
+
+			assert.equal( result, true );
 
 		} );
 	} );
