@@ -256,6 +256,39 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
+	describe( "`dscrb configurable method with symbol type property and function type entity`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+			let result = dscrb( Symbol.for( "extensive" ), Hello ).configurable( );
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb writable method with symbol type property and function type entity`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+			let result = dscrb( Symbol.for( "extensive" ), Hello ).writable( );
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb enumerable method with symbol type property and function type entity`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+			let result = dscrb( Symbol.for( "extensive" ), Hello ).enumerable( );
+
+			assert.equal( result, false );
+
+		} );
+	} );
+
 } );
 //: @end-server
 
@@ -442,6 +475,39 @@ describe( "dscrb", ( ) => {
 	describe( "`dscrb( 'name', function yeah( ){ } ).enumerable( )`", ( ) => {
 		it( "should be equal to false", ( ) => {
 			assert.equal( dscrb( "name", function yeah( ){ } ).enumerable( ), false );
+		} );
+	} );
+
+	describe( "`dscrb configurable method with symbol type property and function type entity`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+			let result = dscrb( Symbol.for( "extensive" ), Hello ).configurable( );
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb writable method with symbol type property and function type entity`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+			let result = dscrb( Symbol.for( "extensive" ), Hello ).writable( );
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb enumerable method with symbol type property and function type entity`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			let Hello = function Hello( ){ };
+			Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+			let result = dscrb( Symbol.for( "extensive" ), Hello ).enumerable( );
+
+			assert.equal( result, false );
+
 		} );
 	} );
 
@@ -801,6 +867,69 @@ describe( "dscrb", ( ) => {
 				}
 
 			).value;
+
+			assert.equal( result, false );
+
+		} );
+	} );
+
+	describe( "`dscrb configurable method with symbol type property and function type entity`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let Hello = function Hello( ){ };
+					Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+					let test = dscrb( Symbol.for( "extensive" ), Hello ).configurable( );
+
+					return test;
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb writable method with symbol type property and function type entity`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let Hello = function Hello( ){ };
+					Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+					let test = dscrb( Symbol.for( "extensive" ), Hello ).writable( );
+
+					return test;
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`dscrb enumerable method with symbol type property and function type entity`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let Hello = function Hello( ){ };
+					Hello[ Symbol.for( "extensive" ) ] = Symbol.for( "extensive" );
+					let test = dscrb( Symbol.for( "extensive" ), Hello ).enumerable( );
+
+					return test;
+				}
+
+			).value;
+			//: @end-ignore
 
 			assert.equal( result, false );
 
