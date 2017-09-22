@@ -121,6 +121,27 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
+	describe( "`dscrb( 1, { 0: 'hello', 1: 'world' } ).describe( )`", ( ) => {
+		it( "should return a descriptor object with complete descriptor properties", ( ) => {
+			let descriptor = dscrb( 1, { 0: "hello", 1: "world" } ).describe( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "get" in descriptor, true );
+
+			assert.equal( "set" in descriptor, true );
+
+			assert.equal( "configurable" in descriptor, true );
+
+			assert.equal( "enumerable" in descriptor, true );
+
+			assert.equal( "writable" in descriptor, true );
+
+		} );
+	} );
+
 	describe( "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).describe( )`", ( ) => {
 		it( "should return a descriptor object with complete descriptor properties", ( ) => {
 			let descriptor = dscrb( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "test" } ).describe( );
@@ -217,6 +238,24 @@ describe( "dscrb", ( ) => {
 	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )`", ( ) => {
 		it( "should be equal to false", ( ) => {
 			assert.equal( dscrb( "length", [ 1, 2, 3 ] ).enumerable( ), false );
+		} );
+	} );
+
+	describe( "`dscrb( 1, { 0: 'hello', 1: 'world' } ).configurable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( 1, { 0: "hello", 1: "world" } ).configurable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 1, { 0: 'hello', 1: 'world' } ).writable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( 1, { 0: "hello", 1: "world" } ).writable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 1, { 0: 'hello', 1: 'world' } ).enumerable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( 1, { 0: "hello", 1: "world" } ).enumerable( ), true );
 		} );
 	} );
 
@@ -343,6 +382,27 @@ describe( "dscrb", ( ) => {
 		} );
 	} );
 
+	describe( "`dscrb( 1, { 0: 'hello', 1: 'world' } ).describe( )`", ( ) => {
+		it( "should return a descriptor object with complete descriptor properties", ( ) => {
+			let descriptor = dscrb( 1, { 0: "hello", 1: "world" } ).describe( );
+
+			assert.equal( typeof descriptor, "object" );
+
+			assert.equal( "value" in descriptor, true );
+
+			assert.equal( "get" in descriptor, true );
+
+			assert.equal( "set" in descriptor, true );
+
+			assert.equal( "configurable" in descriptor, true );
+
+			assert.equal( "enumerable" in descriptor, true );
+
+			assert.equal( "writable" in descriptor, true );
+
+		} );
+	} );
+
 	describe( "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).describe( )`", ( ) => {
 		it( "should return a descriptor object with complete descriptor properties", ( ) => {
 			let descriptor = dscrb( Symbol.for( "hello" ), { [ Symbol.for( "hello" ) ]: "test" } ).describe( );
@@ -439,6 +499,24 @@ describe( "dscrb", ( ) => {
 	describe( "`dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )`", ( ) => {
 		it( "should be equal to false", ( ) => {
 			assert.equal( dscrb( "length", [ 1, 2, 3 ] ).enumerable( ), false );
+		} );
+	} );
+
+	describe( "`dscrb( 1, { 0: 'hello', 1: 'world' } ).configurable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( 1, { 0: "hello", 1: "world" } ).configurable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 1, { 0: 'hello', 1: 'world' } ).writable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( 1, { 0: "hello", 1: "world" } ).writable( ), true );
+		} );
+	} );
+
+	describe( "`dscrb( 1, { 0: 'hello', 1: 'world' } ).enumerable( )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( dscrb( 1, { 0: "hello", 1: "world" } ).enumerable( ), true );
 		} );
 	} );
 
