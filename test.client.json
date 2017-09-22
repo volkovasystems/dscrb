@@ -1,11 +1,11 @@
 {
 	"state": {
-		"passed": 17,
+		"passed": 21,
 		"failed": 0,
 		"skipped": 0
 	},
-	"start": "2017-09-18T07:29:52.368Z",
-	"end": "2017-09-18T07:30:58.221Z",
+	"start": "2017-09-22T07:29:11.329Z",
+	"end": "2017-09-22T07:29:48.957Z",
 	"capabilities": {
 		"browserName": "chrome",
 		"chromeOptions": {
@@ -31,293 +31,357 @@
 		{
 			"name": "dscrb",
 			"duration": 0,
-			"start": "2017-09-18T07:30:57.177Z",
+			"start": "2017-09-22T07:29:47.741Z",
 			"tests": [],
 			"hooks": []
 		},
 		{
 			"name": "dscrb",
-			"duration": 865,
-			"start": "2017-09-18T07:30:57.178Z",
-			"end": "2017-09-18T07:30:58.043Z",
+			"duration": 1039,
+			"start": "2017-09-22T07:29:47.741Z",
+			"end": "2017-09-22T07:29:48.780Z",
 			"tests": [],
 			"hooks": [
 				{
-					"start": "2017-09-18T07:30:57.179Z",
-					"end": "2017-09-18T07:30:57.180Z",
-					"duration": 1,
+					"start": "2017-09-22T07:29:47.743Z",
+					"end": "2017-09-22T07:29:47.743Z",
+					"duration": 0,
 					"title": "\"before each\" hook",
 					"associatedSuite": "dscrb",
 					"associatedTest": "should return an instance of Descriptor"
 				},
 				{
-					"start": "2017-09-18T07:30:57.287Z",
-					"end": "2017-09-18T07:30:57.287Z",
+					"start": "2017-09-22T07:29:47.841Z",
+					"end": "2017-09-22T07:29:47.841Z",
 					"duration": 0,
 					"title": "\"after each\" hook",
 					"associatedSuite": "dscrb",
 					"associatedTest": "should return an instance of Descriptor"
 				},
 				{
-					"start": "2017-09-18T07:30:57.289Z",
-					"end": "2017-09-18T07:30:57.292Z",
+					"start": "2017-09-22T07:29:47.842Z",
+					"end": "2017-09-22T07:29:47.842Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return a descriptor object with complete descriptor properties"
+				},
+				{
+					"start": "2017-09-22T07:29:47.885Z",
+					"end": "2017-09-22T07:29:47.885Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return a descriptor object with complete descriptor properties"
+				},
+				{
+					"start": "2017-09-22T07:29:47.885Z",
+					"end": "2017-09-22T07:29:47.886Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return a descriptor object with complete descriptor properties"
+				},
+				{
+					"start": "2017-09-22T07:29:47.932Z",
+					"end": "2017-09-22T07:29:47.932Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return a descriptor object with complete descriptor properties"
+				},
+				{
+					"start": "2017-09-22T07:29:47.932Z",
+					"end": "2017-09-22T07:29:47.932Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return a descriptor object with complete descriptor properties"
+				},
+				{
+					"start": "2017-09-22T07:29:47.982Z",
+					"end": "2017-09-22T07:29:47.982Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return a descriptor object with complete descriptor properties"
+				},
+				{
+					"start": "2017-09-22T07:29:47.983Z",
+					"end": "2017-09-22T07:29:47.983Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return a descriptor object with complete descriptor properties"
+				},
+				{
+					"start": "2017-09-22T07:29:48.021Z",
+					"end": "2017-09-22T07:29:48.022Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return a descriptor object with complete descriptor properties"
+				},
+				{
+					"start": "2017-09-22T07:29:48.022Z",
+					"end": "2017-09-22T07:29:48.022Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return a descriptor object with complete descriptor properties"
+				},
+				{
+					"start": "2017-09-22T07:29:48.064Z",
+					"end": "2017-09-22T07:29:48.065Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should return a descriptor object with complete descriptor properties"
+				},
+				{
+					"start": "2017-09-22T07:29:48.066Z",
+					"end": "2017-09-22T07:29:48.066Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.115Z",
+					"end": "2017-09-22T07:29:48.115Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.116Z",
+					"end": "2017-09-22T07:29:48.121Z",
+					"duration": 5,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.170Z",
+					"end": "2017-09-22T07:29:48.170Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.175Z",
+					"end": "2017-09-22T07:29:48.177Z",
+					"duration": 2,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.225Z",
+					"end": "2017-09-22T07:29:48.225Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.226Z",
+					"end": "2017-09-22T07:29:48.226Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-09-22T07:29:48.279Z",
+					"end": "2017-09-22T07:29:48.279Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-09-22T07:29:48.279Z",
+					"end": "2017-09-22T07:29:48.279Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.328Z",
+					"end": "2017-09-22T07:29:48.328Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.329Z",
+					"end": "2017-09-22T07:29:48.329Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-09-22T07:29:48.385Z",
+					"end": "2017-09-22T07:29:48.385Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-09-22T07:29:48.386Z",
+					"end": "2017-09-22T07:29:48.386Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.431Z",
+					"end": "2017-09-22T07:29:48.431Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.434Z",
+					"end": "2017-09-22T07:29:48.437Z",
 					"duration": 3,
 					"title": "\"before each\" hook",
 					"associatedSuite": "dscrb",
-					"associatedTest": "should return a descriptor object with complete descriptor properties"
-				},
-				{
-					"start": "2017-09-18T07:30:57.337Z",
-					"end": "2017-09-18T07:30:57.337Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should return a descriptor object with complete descriptor properties"
-				},
-				{
-					"start": "2017-09-18T07:30:57.337Z",
-					"end": "2017-09-18T07:30:57.337Z",
-					"duration": 0,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should return a descriptor object with complete descriptor properties"
-				},
-				{
-					"start": "2017-09-18T07:30:57.382Z",
-					"end": "2017-09-18T07:30:57.382Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should return a descriptor object with complete descriptor properties"
-				},
-				{
-					"start": "2017-09-18T07:30:57.383Z",
-					"end": "2017-09-18T07:30:57.383Z",
-					"duration": 0,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should return a descriptor object with complete descriptor properties"
-				},
-				{
-					"start": "2017-09-18T07:30:57.431Z",
-					"end": "2017-09-18T07:30:57.432Z",
-					"duration": 1,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should return a descriptor object with complete descriptor properties"
-				},
-				{
-					"start": "2017-09-18T07:30:57.432Z",
-					"end": "2017-09-18T07:30:57.432Z",
-					"duration": 0,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should return a descriptor object with complete descriptor properties"
-				},
-				{
-					"start": "2017-09-18T07:30:57.477Z",
-					"end": "2017-09-18T07:30:57.477Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should return a descriptor object with complete descriptor properties"
-				},
-				{
-					"start": "2017-09-18T07:30:57.478Z",
-					"end": "2017-09-18T07:30:57.478Z",
-					"duration": 0,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
 					"associatedTest": "should be equal to true"
 				},
 				{
-					"start": "2017-09-18T07:30:57.532Z",
-					"end": "2017-09-18T07:30:57.532Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to true"
-				},
-				{
-					"start": "2017-09-18T07:30:57.533Z",
-					"end": "2017-09-18T07:30:57.533Z",
-					"duration": 0,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to true"
-				},
-				{
-					"start": "2017-09-18T07:30:57.579Z",
-					"end": "2017-09-18T07:30:57.580Z",
+					"start": "2017-09-22T07:29:48.479Z",
+					"end": "2017-09-22T07:29:48.480Z",
 					"duration": 1,
 					"title": "\"after each\" hook",
 					"associatedSuite": "dscrb",
 					"associatedTest": "should be equal to true"
 				},
 				{
-					"start": "2017-09-18T07:30:57.581Z",
-					"end": "2017-09-18T07:30:57.582Z",
+					"start": "2017-09-22T07:29:48.481Z",
+					"end": "2017-09-22T07:29:48.481Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-09-22T07:29:48.524Z",
+					"end": "2017-09-22T07:29:48.525Z",
 					"duration": 1,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to true"
-				},
-				{
-					"start": "2017-09-18T07:30:57.627Z",
-					"end": "2017-09-18T07:30:57.627Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to true"
-				},
-				{
-					"start": "2017-09-18T07:30:57.628Z",
-					"end": "2017-09-18T07:30:57.629Z",
-					"duration": 1,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to false"
-				},
-				{
-					"start": "2017-09-18T07:30:57.670Z",
-					"end": "2017-09-18T07:30:57.670Z",
-					"duration": 0,
 					"title": "\"after each\" hook",
 					"associatedSuite": "dscrb",
 					"associatedTest": "should be equal to false"
 				},
 				{
-					"start": "2017-09-18T07:30:57.671Z",
-					"end": "2017-09-18T07:30:57.671Z",
+					"start": "2017-09-22T07:29:48.525Z",
+					"end": "2017-09-22T07:29:48.525Z",
 					"duration": 0,
 					"title": "\"before each\" hook",
 					"associatedSuite": "dscrb",
 					"associatedTest": "should be equal to true"
 				},
 				{
-					"start": "2017-09-18T07:30:57.715Z",
-					"end": "2017-09-18T07:30:57.715Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to true"
-				},
-				{
-					"start": "2017-09-18T07:30:57.716Z",
-					"end": "2017-09-18T07:30:57.716Z",
-					"duration": 0,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to false"
-				},
-				{
-					"start": "2017-09-18T07:30:57.765Z",
-					"end": "2017-09-18T07:30:57.765Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to false"
-				},
-				{
-					"start": "2017-09-18T07:30:57.765Z",
-					"end": "2017-09-18T07:30:57.765Z",
-					"duration": 0,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to true"
-				},
-				{
-					"start": "2017-09-18T07:30:57.813Z",
-					"end": "2017-09-18T07:30:57.813Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to true"
-				},
-				{
-					"start": "2017-09-18T07:30:57.814Z",
-					"end": "2017-09-18T07:30:57.814Z",
-					"duration": 0,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to true"
-				},
-				{
-					"start": "2017-09-18T07:30:57.861Z",
-					"end": "2017-09-18T07:30:57.862Z",
+					"start": "2017-09-22T07:29:48.575Z",
+					"end": "2017-09-22T07:29:48.576Z",
 					"duration": 1,
 					"title": "\"after each\" hook",
 					"associatedSuite": "dscrb",
 					"associatedTest": "should be equal to true"
 				},
 				{
-					"start": "2017-09-18T07:30:57.863Z",
-					"end": "2017-09-18T07:30:57.863Z",
+					"start": "2017-09-22T07:29:48.577Z",
+					"end": "2017-09-22T07:29:48.577Z",
 					"duration": 0,
 					"title": "\"before each\" hook",
 					"associatedSuite": "dscrb",
 					"associatedTest": "should be equal to false"
 				},
 				{
-					"start": "2017-09-18T07:30:57.903Z",
-					"end": "2017-09-18T07:30:57.903Z",
+					"start": "2017-09-22T07:29:48.620Z",
+					"end": "2017-09-22T07:29:48.620Z",
 					"duration": 0,
 					"title": "\"after each\" hook",
 					"associatedSuite": "dscrb",
 					"associatedTest": "should be equal to false"
 				},
 				{
-					"start": "2017-09-18T07:30:57.904Z",
-					"end": "2017-09-18T07:30:57.904Z",
-					"duration": 0,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to true"
-				},
-				{
-					"start": "2017-09-18T07:30:57.948Z",
-					"end": "2017-09-18T07:30:57.948Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to true"
-				},
-				{
-					"start": "2017-09-18T07:30:57.950Z",
-					"end": "2017-09-18T07:30:57.950Z",
-					"duration": 0,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to false"
-				},
-				{
-					"start": "2017-09-18T07:30:58.002Z",
-					"end": "2017-09-18T07:30:58.002Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to false"
-				},
-				{
-					"start": "2017-09-18T07:30:58.003Z",
-					"end": "2017-09-18T07:30:58.003Z",
-					"duration": 0,
-					"title": "\"before each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to false"
-				},
-				{
-					"start": "2017-09-18T07:30:58.043Z",
-					"end": "2017-09-18T07:30:58.043Z",
-					"duration": 0,
-					"title": "\"after each\" hook",
-					"associatedSuite": "dscrb",
-					"associatedTest": "should be equal to false"
-				},
-				{
-					"start": "2017-09-18T07:30:58.043Z",
-					"end": "2017-09-18T07:30:58.044Z",
+					"start": "2017-09-22T07:29:48.621Z",
+					"end": "2017-09-22T07:29:48.622Z",
 					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-09-22T07:29:48.663Z",
+					"end": "2017-09-22T07:29:48.663Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-09-22T07:29:48.663Z",
+					"end": "2017-09-22T07:29:48.663Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.704Z",
+					"end": "2017-09-22T07:29:48.704Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.704Z",
+					"end": "2017-09-22T07:29:48.705Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.742Z",
+					"end": "2017-09-22T07:29:48.742Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to true"
+				},
+				{
+					"start": "2017-09-22T07:29:48.743Z",
+					"end": "2017-09-22T07:29:48.743Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-09-22T07:29:48.780Z",
+					"end": "2017-09-22T07:29:48.780Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "dscrb",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-09-22T07:29:48.780Z",
+					"end": "2017-09-22T07:29:48.780Z",
+					"duration": 0,
 					"title": "\"after all\" hook",
 					"associatedSuite": "dscrb"
 				}
@@ -325,15 +389,15 @@
 		},
 		{
 			"name": "`dscrb( 'property', { 'property': 'value' } )`",
-			"duration": 110,
-			"start": "2017-09-18T07:30:57.178Z",
-			"end": "2017-09-18T07:30:57.288Z",
+			"duration": 99,
+			"start": "2017-09-22T07:29:47.742Z",
+			"end": "2017-09-22T07:29:47.841Z",
 			"tests": [
 				{
 					"name": "should return an instance of Descriptor",
-					"start": "2017-09-18T07:30:57.179Z",
-					"end": "2017-09-18T07:30:57.287Z",
-					"duration": 108,
+					"start": "2017-09-22T07:29:47.742Z",
+					"end": "2017-09-22T07:29:47.841Z",
+					"duration": 99,
 					"state": "pass"
 				}
 			],
@@ -341,15 +405,15 @@
 		},
 		{
 			"name": "`dscrb( 'property', { 'property': 'value' } ).describe( )`",
-			"duration": 49,
-			"start": "2017-09-18T07:30:57.288Z",
-			"end": "2017-09-18T07:30:57.337Z",
+			"duration": 44,
+			"start": "2017-09-22T07:29:47.841Z",
+			"end": "2017-09-22T07:29:47.885Z",
 			"tests": [
 				{
 					"name": "should return a descriptor object with complete descriptor properties",
-					"start": "2017-09-18T07:30:57.289Z",
-					"end": "2017-09-18T07:30:57.337Z",
-					"duration": 48,
+					"start": "2017-09-22T07:29:47.842Z",
+					"end": "2017-09-22T07:29:47.885Z",
+					"duration": 43,
 					"state": "pass"
 				}
 			],
@@ -357,15 +421,15 @@
 		},
 		{
 			"name": "`dscrb( 'length', [ 1, 2, 3 ] ).describe( )`",
-			"duration": 45,
-			"start": "2017-09-18T07:30:57.337Z",
-			"end": "2017-09-18T07:30:57.382Z",
+			"duration": 47,
+			"start": "2017-09-22T07:29:47.885Z",
+			"end": "2017-09-22T07:29:47.932Z",
 			"tests": [
 				{
 					"name": "should return a descriptor object with complete descriptor properties",
-					"start": "2017-09-18T07:30:57.337Z",
-					"end": "2017-09-18T07:30:57.382Z",
-					"duration": 45,
+					"start": "2017-09-22T07:29:47.885Z",
+					"end": "2017-09-22T07:29:47.932Z",
+					"duration": 47,
 					"state": "pass"
 				}
 			],
@@ -374,14 +438,14 @@
 		{
 			"name": "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).describe( )`",
 			"duration": 50,
-			"start": "2017-09-18T07:30:57.382Z",
-			"end": "2017-09-18T07:30:57.432Z",
+			"start": "2017-09-22T07:29:47.932Z",
+			"end": "2017-09-22T07:29:47.982Z",
 			"tests": [
 				{
 					"name": "should return a descriptor object with complete descriptor properties",
-					"start": "2017-09-18T07:30:57.382Z",
-					"end": "2017-09-18T07:30:57.431Z",
-					"duration": 49,
+					"start": "2017-09-22T07:29:47.932Z",
+					"end": "2017-09-22T07:29:47.982Z",
+					"duration": 50,
 					"state": "pass"
 				}
 			],
@@ -389,15 +453,31 @@
 		},
 		{
 			"name": "`dscrb( 'name', function yeah( ){ } ).describe( )`",
-			"duration": 45,
-			"start": "2017-09-18T07:30:57.432Z",
-			"end": "2017-09-18T07:30:57.477Z",
+			"duration": 40,
+			"start": "2017-09-22T07:29:47.982Z",
+			"end": "2017-09-22T07:29:48.022Z",
 			"tests": [
 				{
 					"name": "should return a descriptor object with complete descriptor properties",
-					"start": "2017-09-18T07:30:57.432Z",
-					"end": "2017-09-18T07:30:57.477Z",
-					"duration": 45,
+					"start": "2017-09-22T07:29:47.982Z",
+					"end": "2017-09-22T07:29:48.021Z",
+					"duration": 39,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`dscrb with symbol type property and function type entity`",
+			"duration": 43,
+			"start": "2017-09-22T07:29:48.022Z",
+			"end": "2017-09-22T07:29:48.065Z",
+			"tests": [
+				{
+					"name": "should return a descriptor object with complete descriptor properties",
+					"start": "2017-09-22T07:29:48.022Z",
+					"end": "2017-09-22T07:29:48.064Z",
+					"duration": 42,
 					"state": "pass"
 				}
 			],
@@ -405,94 +485,14 @@
 		},
 		{
 			"name": "`dscrb( 'property', { 'property': 'value' } ).configurable( )`",
-			"duration": 55,
-			"start": "2017-09-18T07:30:57.477Z",
-			"end": "2017-09-18T07:30:57.532Z",
+			"duration": 50,
+			"start": "2017-09-22T07:29:48.065Z",
+			"end": "2017-09-22T07:29:48.115Z",
 			"tests": [
 				{
 					"name": "should be equal to true",
-					"start": "2017-09-18T07:30:57.478Z",
-					"end": "2017-09-18T07:30:57.531Z",
-					"duration": 53,
-					"state": "pass"
-				}
-			],
-			"hooks": []
-		},
-		{
-			"name": "`dscrb( 'property', { 'property': 'value' } ).writable( )`",
-			"duration": 48,
-			"start": "2017-09-18T07:30:57.532Z",
-			"end": "2017-09-18T07:30:57.580Z",
-			"tests": [
-				{
-					"name": "should be equal to true",
-					"start": "2017-09-18T07:30:57.532Z",
-					"end": "2017-09-18T07:30:57.579Z",
-					"duration": 47,
-					"state": "pass"
-				}
-			],
-			"hooks": []
-		},
-		{
-			"name": "`dscrb( 'property', { 'property': 'value' } ).enumerable( )`",
-			"duration": 47,
-			"start": "2017-09-18T07:30:57.580Z",
-			"end": "2017-09-18T07:30:57.627Z",
-			"tests": [
-				{
-					"name": "should be equal to true",
-					"start": "2017-09-18T07:30:57.580Z",
-					"end": "2017-09-18T07:30:57.627Z",
-					"duration": 47,
-					"state": "pass"
-				}
-			],
-			"hooks": []
-		},
-		{
-			"name": "`dscrb( 'length', [ 1, 2, 3 ] ).configurable( )`",
-			"duration": 43,
-			"start": "2017-09-18T07:30:57.627Z",
-			"end": "2017-09-18T07:30:57.670Z",
-			"tests": [
-				{
-					"name": "should be equal to false",
-					"start": "2017-09-18T07:30:57.627Z",
-					"end": "2017-09-18T07:30:57.670Z",
-					"duration": 43,
-					"state": "pass"
-				}
-			],
-			"hooks": []
-		},
-		{
-			"name": "`dscrb( 'length', [ 1, 2, 3 ] ).writable( )`",
-			"duration": 45,
-			"start": "2017-09-18T07:30:57.670Z",
-			"end": "2017-09-18T07:30:57.715Z",
-			"tests": [
-				{
-					"name": "should be equal to true",
-					"start": "2017-09-18T07:30:57.671Z",
-					"end": "2017-09-18T07:30:57.715Z",
-					"duration": 44,
-					"state": "pass"
-				}
-			],
-			"hooks": []
-		},
-		{
-			"name": "`dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )`",
-			"duration": 49,
-			"start": "2017-09-18T07:30:57.716Z",
-			"end": "2017-09-18T07:30:57.765Z",
-			"tests": [
-				{
-					"name": "should be equal to false",
-					"start": "2017-09-18T07:30:57.716Z",
-					"end": "2017-09-18T07:30:57.765Z",
+					"start": "2017-09-22T07:29:48.065Z",
+					"end": "2017-09-22T07:29:48.114Z",
 					"duration": 49,
 					"state": "pass"
 				}
@@ -500,63 +500,95 @@
 			"hooks": []
 		},
 		{
-			"name": "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).configurable( )`",
-			"duration": 48,
-			"start": "2017-09-18T07:30:57.765Z",
-			"end": "2017-09-18T07:30:57.813Z",
+			"name": "`dscrb( 'property', { 'property': 'value' } ).writable( )`",
+			"duration": 55,
+			"start": "2017-09-22T07:29:48.115Z",
+			"end": "2017-09-22T07:29:48.170Z",
 			"tests": [
 				{
 					"name": "should be equal to true",
-					"start": "2017-09-18T07:30:57.765Z",
-					"end": "2017-09-18T07:30:57.813Z",
-					"duration": 48,
+					"start": "2017-09-22T07:29:48.115Z",
+					"end": "2017-09-22T07:29:48.170Z",
+					"duration": 55,
 					"state": "pass"
 				}
 			],
 			"hooks": []
 		},
 		{
-			"name": "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).writable( )`",
-			"duration": 49,
-			"start": "2017-09-18T07:30:57.813Z",
-			"end": "2017-09-18T07:30:57.862Z",
+			"name": "`dscrb( 'property', { 'property': 'value' } ).enumerable( )`",
+			"duration": 55,
+			"start": "2017-09-22T07:29:48.170Z",
+			"end": "2017-09-22T07:29:48.225Z",
 			"tests": [
 				{
 					"name": "should be equal to true",
-					"start": "2017-09-18T07:30:57.814Z",
-					"end": "2017-09-18T07:30:57.861Z",
-					"duration": 47,
+					"start": "2017-09-22T07:29:48.170Z",
+					"end": "2017-09-22T07:29:48.224Z",
+					"duration": 54,
 					"state": "pass"
 				}
 			],
 			"hooks": []
 		},
 		{
-			"name": "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).enumerable( )`",
-			"duration": 41,
-			"start": "2017-09-18T07:30:57.862Z",
-			"end": "2017-09-18T07:30:57.903Z",
+			"name": "`dscrb( 'length', [ 1, 2, 3 ] ).configurable( )`",
+			"duration": 54,
+			"start": "2017-09-22T07:29:48.225Z",
+			"end": "2017-09-22T07:29:48.279Z",
 			"tests": [
 				{
 					"name": "should be equal to false",
-					"start": "2017-09-18T07:30:57.862Z",
-					"end": "2017-09-18T07:30:57.903Z",
-					"duration": 41,
+					"start": "2017-09-22T07:29:48.225Z",
+					"end": "2017-09-22T07:29:48.279Z",
+					"duration": 54,
 					"state": "pass"
 				}
 			],
 			"hooks": []
 		},
 		{
-			"name": "`dscrb( 'name', function yeah( ){ } ).configurable( )`",
-			"duration": 45,
-			"start": "2017-09-18T07:30:57.904Z",
-			"end": "2017-09-18T07:30:57.949Z",
+			"name": "`dscrb( 'length', [ 1, 2, 3 ] ).writable( )`",
+			"duration": 50,
+			"start": "2017-09-22T07:29:48.279Z",
+			"end": "2017-09-22T07:29:48.329Z",
 			"tests": [
 				{
 					"name": "should be equal to true",
-					"start": "2017-09-18T07:30:57.904Z",
-					"end": "2017-09-18T07:30:57.948Z",
+					"start": "2017-09-22T07:29:48.279Z",
+					"end": "2017-09-22T07:29:48.328Z",
+					"duration": 49,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`dscrb( 'length', [ 1, 2, 3 ] ).enumerable( )`",
+			"duration": 56,
+			"start": "2017-09-22T07:29:48.329Z",
+			"end": "2017-09-22T07:29:48.385Z",
+			"tests": [
+				{
+					"name": "should be equal to false",
+					"start": "2017-09-22T07:29:48.329Z",
+					"end": "2017-09-22T07:29:48.385Z",
+					"duration": 56,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).configurable( )`",
+			"duration": 47,
+			"start": "2017-09-22T07:29:48.386Z",
+			"end": "2017-09-22T07:29:48.433Z",
+			"tests": [
+				{
+					"name": "should be equal to true",
+					"start": "2017-09-22T07:29:48.386Z",
+					"end": "2017-09-22T07:29:48.430Z",
 					"duration": 44,
 					"state": "pass"
 				}
@@ -564,16 +596,64 @@
 			"hooks": []
 		},
 		{
-			"name": "`dscrb( 'name', function yeah( ){ } ).writable( )`",
-			"duration": 53,
-			"start": "2017-09-18T07:30:57.949Z",
-			"end": "2017-09-18T07:30:58.002Z",
+			"name": "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).writable( )`",
+			"duration": 47,
+			"start": "2017-09-22T07:29:48.433Z",
+			"end": "2017-09-22T07:29:48.480Z",
+			"tests": [
+				{
+					"name": "should be equal to true",
+					"start": "2017-09-22T07:29:48.433Z",
+					"end": "2017-09-22T07:29:48.479Z",
+					"duration": 46,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`dscrb( Symbol.for( 'hello' ), { [ Symbol.for( 'hello' ) ]: 'test' } ).enumerable( )`",
+			"duration": 45,
+			"start": "2017-09-22T07:29:48.480Z",
+			"end": "2017-09-22T07:29:48.525Z",
 			"tests": [
 				{
 					"name": "should be equal to false",
-					"start": "2017-09-18T07:30:57.950Z",
-					"end": "2017-09-18T07:30:58.002Z",
-					"duration": 52,
+					"start": "2017-09-22T07:29:48.481Z",
+					"end": "2017-09-22T07:29:48.524Z",
+					"duration": 43,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`dscrb( 'name', function yeah( ){ } ).configurable( )`",
+			"duration": 51,
+			"start": "2017-09-22T07:29:48.525Z",
+			"end": "2017-09-22T07:29:48.576Z",
+			"tests": [
+				{
+					"name": "should be equal to true",
+					"start": "2017-09-22T07:29:48.525Z",
+					"end": "2017-09-22T07:29:48.575Z",
+					"duration": 50,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`dscrb( 'name', function yeah( ){ } ).writable( )`",
+			"duration": 45,
+			"start": "2017-09-22T07:29:48.576Z",
+			"end": "2017-09-22T07:29:48.621Z",
+			"tests": [
+				{
+					"name": "should be equal to false",
+					"start": "2017-09-22T07:29:48.576Z",
+					"end": "2017-09-22T07:29:48.620Z",
+					"duration": 44,
 					"state": "pass"
 				}
 			],
@@ -581,15 +661,63 @@
 		},
 		{
 			"name": "`dscrb( 'name', function yeah( ){ } ).enumerable( )`",
-			"duration": 41,
-			"start": "2017-09-18T07:30:58.002Z",
-			"end": "2017-09-18T07:30:58.043Z",
+			"duration": 42,
+			"start": "2017-09-22T07:29:48.621Z",
+			"end": "2017-09-22T07:29:48.663Z",
 			"tests": [
 				{
 					"name": "should be equal to false",
-					"start": "2017-09-18T07:30:58.002Z",
-					"end": "2017-09-18T07:30:58.043Z",
+					"start": "2017-09-22T07:29:48.621Z",
+					"end": "2017-09-22T07:29:48.663Z",
+					"duration": 42,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`dscrb configurable method with symbol type property and function type entity`",
+			"duration": 41,
+			"start": "2017-09-22T07:29:48.663Z",
+			"end": "2017-09-22T07:29:48.704Z",
+			"tests": [
+				{
+					"name": "should be equal to true",
+					"start": "2017-09-22T07:29:48.663Z",
+					"end": "2017-09-22T07:29:48.704Z",
 					"duration": 41,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`dscrb writable method with symbol type property and function type entity`",
+			"duration": 39,
+			"start": "2017-09-22T07:29:48.704Z",
+			"end": "2017-09-22T07:29:48.743Z",
+			"tests": [
+				{
+					"name": "should be equal to true",
+					"start": "2017-09-22T07:29:48.704Z",
+					"end": "2017-09-22T07:29:48.742Z",
+					"duration": 38,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`dscrb enumerable method with symbol type property and function type entity`",
+			"duration": 37,
+			"start": "2017-09-22T07:29:48.743Z",
+			"end": "2017-09-22T07:29:48.780Z",
+			"tests": [
+				{
+					"name": "should be equal to false",
+					"start": "2017-09-22T07:29:48.743Z",
+					"end": "2017-09-22T07:29:48.780Z",
+					"duration": 37,
 					"state": "pass"
 				}
 			],

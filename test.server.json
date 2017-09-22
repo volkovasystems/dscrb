@@ -1,13 +1,13 @@
 {
 	"stats": {
-		"suites": 18,
-		"tests": 17,
-		"passes": 17,
+		"suites": 22,
+		"tests": 21,
+		"passes": 21,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-09-18T07:29:51.153Z",
-		"end": "2017-09-18T07:29:51.161Z",
-		"duration": 8
+		"start": "2017-09-22T07:29:10.197Z",
+		"end": "2017-09-22T07:29:10.207Z",
+		"duration": 10
 	},
 	"tests": [
 		{
@@ -46,9 +46,16 @@
 			"err": {}
 		},
 		{
+			"title": "should return a descriptor object with complete descriptor properties",
+			"fullTitle": "dscrb `dscrb with symbol type property and function type entity` should return a descriptor object with complete descriptor properties",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
 			"title": "should be equal to true",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).configurable( )` should be equal to true",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -125,6 +132,27 @@
 		{
 			"title": "should be equal to false",
 			"fullTitle": "dscrb `dscrb( 'name', function yeah( ){ } ).enumerable( )` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb configurable method with symbol type property and function type entity` should be equal to true",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb writable method with symbol type property and function type entity` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "dscrb `dscrb enumerable method with symbol type property and function type entity` should be equal to false",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
@@ -169,9 +197,16 @@
 			"err": {}
 		},
 		{
+			"title": "should return a descriptor object with complete descriptor properties",
+			"fullTitle": "dscrb `dscrb with symbol type property and function type entity` should return a descriptor object with complete descriptor properties",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
 			"title": "should be equal to true",
 			"fullTitle": "dscrb `dscrb( 'property', { 'property': 'value' } ).configurable( )` should be equal to true",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -248,6 +283,27 @@
 		{
 			"title": "should be equal to false",
 			"fullTitle": "dscrb `dscrb( 'name', function yeah( ){ } ).enumerable( )` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb configurable method with symbol type property and function type entity` should be equal to true",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "dscrb `dscrb writable method with symbol type property and function type entity` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "dscrb `dscrb enumerable method with symbol type property and function type entity` should be equal to false",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
